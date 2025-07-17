@@ -6,13 +6,12 @@
 {% endcomment %}
 <style>
   .cart-container {
-    max-width: 800px;
     margin: 2rem auto;
-    padding: 2rem;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
+    padding: 2rem;
+    width:100%;
+    }
+  
   .cart-title {
     text-align: center;
     font-size: 2rem;
@@ -91,82 +90,60 @@
   }
 </style>
 
-<div class="cart-container">
-  <h1 class="cart-title">{{ 'cart.title' | t }}</h1>
+<div class="container">
+  <div class="cart-container">
+    <h1 class="cart-title">{{ 'cart.title' | t }}</h1>
 
-  {% if cart.item_count == 0 %}
-    <div class="cart-empty-message">
-      {{ 'cart.empty' | t }}
-    </div>
-  {% else %}
-    <form action="{{ routes.cart_url }}" method="post">
-      <table class="cart-table">
-        <thead>
-          <tr>
-            <th>{{ 'cart.products' | t }}</th>
-            <th>{{ 'cart.details' | t }}</th>
-            <th>{{ 'cart.quantity' | t }}</th>
-            <th>{{ 'cart.price' | t }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in cart.items %}
+    {% if cart.item_count == 0 %}
+      <div class="cart-empty-message">
+        {{ 'cart.empty' | t }}
+      </div>
+    {% else %}
+      <form action="{{ routes.cart_url }}" method="post">
+        <table class="cart-table">
+          <thead>
             <tr>
-              <td>
-                {% if item.image %}
-                  <img class="cart-product-image" src="{{ item.image | image_url: width: 80, height: 80 }}" alt="{{ item.product.title }}">
-                {% endif %}
-              </td>
-              <td>
-                <div class="cart-product-title">{{ item.product.title }}</div>
-                {% if item.variant.title != 'Default Title' %}
-                  <div>{{ item.variant.title }}</div>
-                {% endif %}
-                <a class="cart-remove-link" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
-              </td>
-              <td>
-                {{ item.quantity }}
-                {% comment %} <button class="cart-update-btn" type="submit">{{ 'cart.update' | t }}</button> {% endcomment %}
-              </td>
-              <td>
-                {{ item.final_line_price | money }}
-              </td>
+              <th>{{ 'cart.products' | t }}</th>
+              <th>{{ 'cart.details' | t }}</th>
+              <th>{{ 'cart.quantity' | t }}</th>
+              <th>{{ 'cart.price' | t }}</th>
             </tr>
-          {% endfor %}
-          <tr class="cart-total-row">
-            <td colspan="3">{{ 'cart.total' | t }}</td>
-            <td>{{ cart.total_price | money }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="cart-checkout-btn" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
-    </form>
-  {% endif %}
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>
+                  {% if item.image %}
+                    <img class="cart-product-image" src="{{ item.image | image_url: width: 80, height: 80 }}" alt="{{ item.product.title }}">
+                  {% endif %}
+                </td>
+                <td>
+                  <div class="cart-product-title">{{ item.product.title }}</div>
+                  {% if item.variant.title != 'Default Title' %}
+                    <div>{{ item.variant.title }}</div>
+                  {% endif %}
+                  <a class="cart-remove-link" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+                </td>
+                <td>
+                  {{ item.quantity }}
+                  {% comment %} <button class="cart-update-btn" type="submit">{{ 'cart.update' | t }}</button> {% endcomment %}
+                </td>
+                <td>
+                  {{ item.final_line_price | money }}
+                </td>
+              </tr>
+            {% endfor %}
+            <tr class="cart-total-row">
+              <td colspan="3">{{ 'cart.total' | t }}</td>
+              <td>{{ cart.total_price | money }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="cart-checkout-btn" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+      </form>
+    {% endif %}
+  </div>
 </div>
-
-<h1>{{ 'cart.title' | t }}</h1>
-
-<form action="{{ routes.cart_url }}" method="post">
-  <table>
-    {% for item in cart.items %}
-      <tr>
-        <td>
-          {% render 'image', image: item.image, url: item.url %}
-        </td>
-        <td>
-          <p>{{ item.product.title }}</p>
-          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </td>
-        <td>
-          <input type="text" name="updates[]" value="{{ item.quantity }}">
-          <input type="submit" value="{{ 'cart.update' | t }}">
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
-
-  <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
-</form>
 
 {% schema %}
 {

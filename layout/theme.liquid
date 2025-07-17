@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ request.locale.iso_code }}">
   <head>
+    <title>{{ page_title }}</title> 
     {% # Inlined CSS Variables %}
     {% render 'css-variables' %}
 
@@ -11,6 +12,7 @@
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all">
     
   </head>
 
