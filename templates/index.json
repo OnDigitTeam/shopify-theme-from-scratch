@@ -12,9 +12,110 @@
     "main": {
       "type": "hello-world",
       "settings": {}
+    },
+    "custom_section_fRBMkX": {
+      "type": "custom-section",
+      "blocks": {
+        "group_QHzLfz": {
+          "type": "group",
+          "name": "t:general.column",
+          "settings": {
+            "layout_direction": "group--vertical",
+            "alignment": "flex-start",
+            "padding": 146
+          },
+          "blocks": {
+            "group_EDVdTM": {
+              "type": "group",
+              "name": "t:general.row",
+              "settings": {
+                "layout_direction": "group--horizontal",
+                "alignment": "flex-start",
+                "padding": 0
+              },
+              "blocks": {
+                "text_keyUUt": {
+                  "type": "text",
+                  "name": "t:general.text",
+                  "settings": {
+                    "text": "Text",
+                    "text_style": "text--title",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_keyUUt"
+              ]
+            },
+            "group_YFigDQ": {
+              "type": "group",
+              "name": "t:general.row",
+              "settings": {
+                "layout_direction": "group--horizontal",
+                "alignment": "flex-start",
+                "padding": 0
+              },
+              "blocks": {
+                "text_L9iQ3X": {
+                  "type": "text",
+                  "name": "t:general.text",
+                  "settings": {
+                    "text": "456",
+                    "text_style": "text--title",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_L9iQ3X"
+              ]
+            }
+          },
+          "block_order": [
+            "group_EDVdTM",
+            "group_YFigDQ"
+          ]
+        },
+        "group_yj36nB": {
+          "type": "group",
+          "name": "t:general.row",
+          "settings": {
+            "layout_direction": "group--horizontal",
+            "alignment": "flex-start",
+            "padding": 0
+          },
+          "blocks": {
+            "text_UYYNrT": {
+              "type": "text",
+              "name": "t:general.text",
+              "settings": {
+                "text": "Text12",
+                "text_style": "text--title",
+                "alignment": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_UYYNrT"
+          ]
+        }
+      },
+      "block_order": [
+        "group_QHzLfz",
+        "group_yj36nB"
+      ],
+      "name": "t:general.custom_section",
+      "settings": {
+        "background_image": "shopify://shop_images/wrist-watch-on-driving-arm.jpg"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_section_fRBMkX"
   ]
 }
