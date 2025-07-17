@@ -125,8 +125,8 @@
                 <a class="cart-remove-link" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
               </td>
               <td>
-                <input class="cart-quantity-input" type="number" name="updates[]" value="{{ item.quantity }}" min="1">
-                <button class="cart-update-btn" type="submit">{{ 'cart.update' | t }}</button>
+                {{ item.quantity }}
+                {% comment %} <button class="cart-update-btn" type="submit">{{ 'cart.update' | t }}</button> {% endcomment %}
               </td>
               <td>
                 {{ item.final_line_price | money }}
