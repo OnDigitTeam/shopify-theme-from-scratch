@@ -6,7 +6,19 @@
 {% endcomment %}
 
 <h1>{{ collection.title }}</h1>
+<form id="range-filter-form" method="get">
+  <label for="price_min">Price Min:</label>
+  <input type="number" id="price_min" name="price_min" min="1" max="20" value="{{ request.params.price_min | default: 1 }}">
+  <label for="price_max">Price Max:</label>
+  <input type="number" id="price_max" name="price_max" min="1" max="20" value="{{ request.params.price_max | default: 20 }}">
+  <button type="submit">Filter</button>
+</form>
+{% assign price_min = request.params.price_min | default: 1 | times: 100 %}
+{% assign price_max = request.params.price_max | default: 20 | times: 100 %}
+{% assign filtered_products = collection.products | where: "price", "gte", price_min | where: "price", "lte", price_max %}
+{% assign collection_products = filtered_products %}
 
+33
 <div class="collection-products">
   {% paginate collection.products by 20 %}
     {% for product in collection.products %}
