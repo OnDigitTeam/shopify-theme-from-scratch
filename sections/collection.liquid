@@ -30,7 +30,77 @@
     document.getElementById('price_max').value = document.getElementById('range-bar-max').value;
   });
 </script>
+<script>
+  // Set min/max for range bars and inputs
+  document.getElementById('price_min').min = 0.1;
+  document.getElementById('price_min').max = 20;
+  document.getElementById('price_max').min = 0.1;
+  document.getElementById('price_max').max = 20;
+  document.getElementById('range-bar-min').min = 0.1;
+  document.getElementById('range-bar-min').max = 20;
+  document.getElementById('range-bar-max').min = 0.1;
+  document.getElementById('range-bar-max').max = 20;
 
+  // Ensure range bars step by 0.1
+  document.getElementById('range-bar-min').step = 0.1;
+  document.getElementById('range-bar-max').step = 0.1;
+
+  // Sync input fields with range bars on change
+  document.getElementById('range-bar-min').addEventListener('input', function() {
+    document.getElementById('price_min').value = this.value;
+    document.getElementById('range-bar-value').innerText = this.value + ' - ' + document.getElementById('range-bar-max').value;
+  });
+  document.getElementById('range-bar-max').addEventListener('input', function() {
+    document.getElementById('price_max').value = this.value;
+    document.getElementById('range-bar-value').innerText = document.getElementById('range-bar-min').value + ' - ' + this.value;
+  });
+</script>
+
+<style>
+  .range-bar-filter label {
+    font-weight: bold;
+    margin-bottom: 0.2em;
+  }
+  .range-bar-filter input[type="range"] {
+    accent-color: #0070f3;
+    height: 2.5em;
+    background: #f0f0f0;
+    border-radius: 8px;
+  }
+  #range-bar-value {
+    font-size: 1.1em;
+    color: #0070f3;
+    margin-left: 0.5em;
+  }
+  #range-filter-form {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  #range-filter-form label {
+    font-size: 1em;
+    margin-right: 0.2em;
+  }
+  #range-filter-form input[type="number"] {
+    width: 4em;
+    padding: 0.2em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  #range-filter-form button {
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #range-filter-form button:hover {
+    background: #005bb5;
+  }
+</style>
 <style>
   .range-bar-filter {
     margin-bottom: 1em;
