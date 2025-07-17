@@ -25,6 +25,11 @@
   "cart": {
     "checkout": "Checkout",
     "title": "Cart",
+    "empty": "Your cart is empty.",
+    "products": "Products",
+    "details": "Details",
+    "price": "Price",
+    "quantity": "Quantity",
     "update": "Update",
     "remove": "Remove"
   },
