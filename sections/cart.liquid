@@ -4,6 +4,145 @@
 
   https://shopify.dev/docs/storefronts/themes/architecture/templates/cart
 {% endcomment %}
+<style>
+  .cart-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .cart-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  .cart-table th, .cart-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .cart-product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #f7f7f7;
+  }
+  .cart-product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .cart-remove-link {
+    color: #d32f2f;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+    display: inline-block;
+  }
+  .cart-quantity-input {
+    width: 60px;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .cart-update-btn {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  .cart-checkout-btn {
+    background: #43a047;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin: 2rem auto 0 auto;
+  }
+  .cart-empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin: 3rem 0;
+  }
+  .cart-total-row {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: #f5f5f5;
+  }
+</style>
+
+<div class="cart-container">
+  <h1 class="cart-title">{{ 'cart.title' | t }}</h1>
+
+  {% if cart.item_count == 0 %}
+    <div class="cart-empty-message">
+      {{ 'cart.empty' | t }}
+    </div>
+  {% else %}
+    <form action="{{ routes.cart_url }}" method="post">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>{{ 'cart.product' | t }}</th>
+            <th>{{ 'cart.details' | t }}</th>
+            <th>{{ 'cart.quantity' | t }}</th>
+            <th>{{ 'cart.price' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td>
+                {% if item.image %}
+                  <img class="cart-product-image" src="{{ item.image | image_url: width: 80, height: 80 }}" alt="{{ item.product.title }}">
+                {% endif %}
+              </td>
+              <td>
+                <div class="cart-product-title">{{ item.product.title }}</div>
+                {% if item.variant.title != 'Default Title' %}
+                  <div>{{ item.variant.title }}</div>
+                {% endif %}
+                <a class="cart-remove-link" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a>
+              </td>
+              <td>
+                <input class="cart-quantity-input" type="number" name="updates[]" value="{{ item.quantity }}" min="1">
+                <button class="cart-update-btn" type="submit">{{ 'cart.update' | t }}</button>
+              </td>
+              <td>
+                {{ item.final_line_price | money }}
+              </td>
+            </tr>
+          {% endfor %}
+          <tr class="cart-total-row">
+            <td colspan="3">{{ 'cart.total' | t }}</td>
+            <td>{{ cart.total_price | money }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="cart-checkout-btn" type="submit" name="checkout">{{ 'cart.checkout' | t }}</button>
+    </form>
+  {% endif %}
+</div>
 
 <h1>{{ 'cart.title' | t }}</h1>
 
