@@ -6,7 +6,7 @@
   The image can be positioned either to the left or right of the text content.
 {% endcomment %}
 
-<section id="{{ section.settings.section_id | escape }}" class="image-with-text-section {{ section.settings.bg_color }} {{ section.settings.image_position }} {{ section.settings.text_size }}">
+<section id="section-{{ section.id }}" class="image-with-text-section {{ section.settings.bg_color }} {{ section.settings.image_position }} {{ section.settings.text_size }}">
   <div class="image-with-text container">
     
     {% comment %} Image first if position is 'left', else render after content {% endcomment %}
@@ -88,12 +88,6 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image_with_text.settings.image.label"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "t:sections.image_with_text.settings.section_id.label",
-      "default": "image-with-text"
     }
   ],
   "blocks": [
