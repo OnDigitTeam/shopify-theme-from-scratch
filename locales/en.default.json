@@ -11,7 +11,8 @@
   "sections": {
     "image_with_text": {
       "name": "Image with Text",
-      "settings": {
+      "settings": { 
+        
         "image": {
           "label": "Select image"
         },
