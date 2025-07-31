@@ -45,24 +45,20 @@
       "blocks": {
         "heading": {
           "name": "Heading",
-          "label": "Heading Text",
-          "class": "Heading CSS Class"
+          "label": "Heading Text"          
         },
         "caption": {
           "name": "Caption",
-          "label": "Caption Text",
-          "class": "Caption CSS Class"
+          "label": "Caption Text"
         },
         "text": {
           "name": "Text",
-          "label": "Body Text",
-          "class": "Text CSS Class"
+          "label": "Body Text"
         },
         "button": {
           "name": "Button",
           "label": "Button Label",
-          "link": "Button Link",
-          "class": "Button CSS Class"
+          "link": "Button Link"
         }
       },
       "presets": {
@@ -71,7 +67,7 @@
         }
       }
     }
-  }
+  },
 
   "404": {
     "title": "404",
