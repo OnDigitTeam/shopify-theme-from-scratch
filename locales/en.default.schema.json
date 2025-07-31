@@ -81,5 +81,65 @@
       "subtitle": "Subtitle",
       "normal": "Normal text"
     },
+  },
+  "sections": {
+    "image_with_text": {
+      "name": "Image with Text",
+      "settings": { 
+        "image": {
+          "label": "Select image"
+        },
+        "section_id": {
+          "label": "Section ID"
+        },
+        "image_position": {
+          "label": "Image Position",
+          "options": {
+            "image-left": "Left",
+            "image-right": "Right"
+          }
+        },
+        "bg_color": {
+          "label": "Background Color",
+          "options": {
+            "bg-white": "White",
+            "bg-gray": "Gray",
+            "bg-black": "Black"
+          }
+        },
+        "text_size": {
+          "label": "Text Size",
+          "options": {
+            "text-small": "Small",
+            "text-medium": "Medium",
+            "text-large": "Large"
+          }
+        }
+      },
+      "blocks": {
+        "heading": {
+          "name": "Heading",
+          "label": "Heading Text"          
+        },
+        "caption": {
+          "name": "Caption",
+          "label": "Caption Text"
+        },
+        "text": {
+          "name": "Text",
+          "label": "Body Text"
+        },
+        "button": {
+          "name": "Button",
+          "label": "Button Label",
+          "link": "Button Link"
+        }
+      },
+      "presets": {
+        "default": {
+          "name": "Image with Text"
+        }
+      }
+    }
   }
 }
