@@ -1,0 +1,16 @@
+<div class="image-with-text__image">
+  {% if image != blank %}
+    <img
+      src="{{ image | image_url: width: 800 }}"
+      alt="{{ image.alt | escape }}"
+      loading="lazy"
+    >
+  {% else %}
+    <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="background:#f3f3f3;">
+      <rect width="400" height="300" fill="#e0e0e0"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#999" font-size="16">
+        No image selected
+      </text>
+    </svg>
+  {% endif %}
+</div>

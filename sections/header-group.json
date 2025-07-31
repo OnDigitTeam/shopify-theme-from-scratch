@@ -16,9 +16,14 @@
       "settings": {
         "menu": "main-menu"
       }
+    },
+    "side-cart": {
+      "type": "sidebar"
+      
     }
   },
   "order": [
-    "header"
+    "header",
+    "side-cart"
   ]
 }

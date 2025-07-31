@@ -4,6 +4,7 @@
     <title>{{ page_title }}</title> 
     {% # Inlined CSS Variables %}
     {% render 'css-variables' %}
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
     {% # Load and preload the critical CSS %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
