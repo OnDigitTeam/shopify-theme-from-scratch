@@ -30,7 +30,6 @@
   width: max-content;
   will-change: transform, width;
 }
-
 .scrolling-promotion--left .promotion--animated {
   animation-name: scrolling-left;
 }
