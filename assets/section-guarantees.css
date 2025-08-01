@@ -84,7 +84,6 @@
   padding-inline-start: 1.5rem;
   padding-inline-end: 1.5rem;
 }
-
 @media screen and (min-width: 750px) {
   .guarantees--colored {
     padding-inline-start: 5rem;

@@ -11,6 +11,7 @@
       endfor
     endif
   -%}
+  
   {%- capture begin_tag -%}<em class="highlighted-text" is="highlighted-text" data-style="{{ hl_style }}">{%- endcapture -%}
   {%- assign content = hl_input | replace: '<em>', begin_tag -%}
 
