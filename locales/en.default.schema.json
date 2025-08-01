@@ -137,6 +137,205 @@
           "name": "Image with Text"
         }
       }
+    },
+    "guarantees": {
+      "blocks": {
+        "guarantee": {
+          "name": "Guarantee",
+          "settings": {
+            "custom_icon": {
+              "info": "Learn more about [SVG](https://roartheme.co/blogs/news/what-you-need-to-know-about-svg)",
+              "label": "Custom SVG icon"
+            },
+            "icon": {
+              "label": "Icon",
+              "options__1": {
+                "label": "None"
+              },
+              "options__10": {
+                "label": "Download"
+              },
+              "options__11": {
+                "label": "Dryer"
+              },
+              "options__12": {
+                "label": "Eye"
+              },
+              "options__13": {
+                "label": "Fire"
+              },
+              "options__14": {
+                "label": "Globe"
+              },
+              "options__15": {
+                "label": "Gluten free"
+              },
+              "options__16": {
+                "label": "Headset"
+              },
+              "options__17": {
+                "label": "Heart"
+              },
+              "options__18": {
+                "label": "Leaf"
+              },
+              "options__19": {
+                "label": "Light"
+              },
+              "options__2": {
+                "label": "Apple"
+              },
+              "options__20": {
+                "label": "Lightning bolt"
+              },
+              "options__21": {
+                "label": "Link"
+              },
+              "options__22": {
+                "label": "Lock"
+              },
+              "options__23": {
+                "label": "Map pin"
+              },
+              "options__24": {
+                "label": "Music"
+              },
+              "options__25": {
+                "label": "Package"
+              },
+              "options__26": {
+                "label": "Paw print"
+              },
+              "options__27": {
+                "label": "Pepper"
+              },
+              "options__28": {
+                "label": "Phone"
+              },
+              "options__29": {
+                "label": "Plane"
+              },
+              "options__3": {
+                "label": "Banana"
+              },
+              "options__30": {
+                "label": "Plant"
+              },
+              "options__31": {
+                "label": "Price tag"
+              },
+              "options__32": {
+                "label": "Question mark"
+              },
+              "options__33": {
+                "label": "Recycle"
+              },
+              "options__34": {
+                "label": "Return"
+              },
+              "options__35": {
+                "label": "Ruler"
+              },
+              "options__36": {
+                "label": "Shield"
+              },
+              "options__37": {
+                "label": "Ship"
+              },
+              "options__38": {
+                "label": "Shop"
+              },
+              "options__39": {
+                "label": "Silhouette"
+              },
+              "options__4": {
+                "label": "Bottle"
+              },
+              "options__40": {
+                "label": "Snowflake"
+              },
+              "options__41": {
+                "label": "Star"
+              },
+              "options__42": {
+                "label": "Stopwatch"
+              },
+              "options__43": {
+                "label": "Truck"
+              },
+              "options__44": {
+                "label": "Washing"
+              },
+              "options__5": {
+                "label": "Carrot"
+              },
+              "options__6": {
+                "label": "Chat bubble"
+              },
+              "options__7": {
+                "label": "Check mark"
+              },
+              "options__8": {
+                "label": "Clipboard"
+              },
+              "options__9": {
+                "label": "Dolly"
+              }
+            },
+            "icon_size": {
+              "label": "Icon size",
+              "options__1": {
+                "label": "Small"
+              },
+              "options__2": {
+                "label": "Medium"
+              },
+              "options__3": {
+                "label": "Large"
+              }
+            },
+            "image": {
+              "label": "Image"
+            },
+            "text": {
+              "label": "Content"
+            },
+            "title": {
+              "label": "Heading"
+            }
+          }
+        }
+      },
+      "name": "Guarantees",
+      "presets": {
+        "name": "Guarantees"
+      },
+      "settings": {
+        "column_alignment": {
+          "label": "Column alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "horizontal_content": {
+          "label": "Make content horizontally"
+        },
+        "layout": {
+          "label": "Layout",
+          "options__1": {
+            "label": "Default"
+          },
+          "options__2": {
+            "label": "Sidebar"
+          }
+        }
+      }
     }
   }
 }
