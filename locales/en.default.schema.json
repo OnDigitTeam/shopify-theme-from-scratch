@@ -82,6 +82,7 @@
       "normal": "Normal text"
     },
   },
+  
   "sections": {
     "image_with_text": {
       "name": "Image with Text",
@@ -138,6 +139,90 @@
         }
       }
     },
+    "scrolling-promotion": {
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "link": {
+              "label": "Link"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "text_size": {
+              "label": "Text size",
+              "unit": "px"
+            }
+          }
+        },
+        "image": {
+          "name": "Image",
+          "settings": {
+            "height": {
+              "label": "Custom height",
+              "unit": "px"
+            },
+            "image": {
+              "label": "Image"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "name": "Scrolling promotion",
+      "presets": {
+        "name": "Scrolling promotion"
+      },
+      "settings": {
+        "direction": {
+          "label": "Direction",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Right"
+          }
+        },
+        "speed": {
+          "label": "Speed",
+          "unit": "s/100px"
+        }
+      }
+    },
+    "video": {
+          "name": "Video",
+          "settings": {
+            "cover_image": {
+              "label": "Cover image"
+            },
+            "enable_video_looping": {
+              "label": "Enable video looping"
+            },
+            "header__1": {
+              "content": "Shopify-hosted video"
+            },
+            "header__2": {
+              "content": "Or embed video from URL"
+            },
+            "paragraph": {
+              "content": "Shows when no Shopify-hosted video is selected."
+            },
+            "video": {
+              "label": "Video"
+            },
+            "video_alt": {
+              "info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video)",
+              "label": "Video alt text"
+            },
+            "video_url": {
+              "info": "Use a YouTube or Vimeo URL",
+              "label": "URL"
+            }
+          }
+        },
     "guarantees": {
       "blocks": {
         "guarantee": {
