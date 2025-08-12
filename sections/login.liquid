@@ -1,0 +1,31 @@
+{% comment %}
+  Custom Login Section
+  - Displays a login form for customers
+{% endcomment %}
+
+<section class="custom-login-section">
+  <h2>Login</h2>
+  {% form 'customer_login' %}
+    <div class="field">
+      <label for="CustomerEmail">Email</label>
+      <input type="email" name="customer[email]" id="CustomerEmail" required>
+    </div>
+    <div class="field">
+      <label for="CustomerPassword">Password</label>
+      <input type="password" name="customer[password]" id="CustomerPassword" required>
+    </div>
+    <button type="submit">Sign In</button>
+  {% endform %}
+  <a href="/account/register">Create account</a> |
+  <a href="/account/recover">Forgot password?</a>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Login Section",
+  "settings": [],
+  "presets": [
+    { "name": "Custom Login" }
+  ]
+}
+{% endschema %}

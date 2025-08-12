@@ -1,72 +1,19 @@
-<style>
-                .sidebar-drawer-wrapper {
-                        position: fixed;
-                        top: 0;
-                        right: 0;
-                        width: 100vw;
-                        height: 100vh;
-                        display: none;
-                        z-index: 1000;
-                }
-                .sidebar-drawer-wrapper.open {
-                        display: block;
-                }
-                .sidebar-backdrop {
-                        position: absolute;
-                        inset: 0;
-                        background: rgba(0,0,0,0.4);
-                        transition: background 0.3s;
-                }
-                .sidebar-drawer {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        width: 550px;
-                        max-width: 100vw;
-                        height: 100vh;
-                        background: #fff;
-                        box-shadow: -2px 0 8px rgba(0,0,0,0.15);
-                        transform: translateX(100%);
-                        transition: transform 0.3s;
-                        will-change: transform;
-                        overflow-y: auto;
-                }
-                .sidebar-drawer-wrapper.open .sidebar-drawer {
-                        transform: translateX(0);
-                }
-            </style>
-            <div class="sidebar-drawer-wrapper">
-                <div class="sidebar-backdrop"></div>
-                <aside class="sidebar-drawer">
-                    <slot></slot>
-                </aside>
-            </div>
-            <!-- Usage example: -->
-<button id="open-sidebar-btn">Open Sidebar</button>
-<sidebar-drawer open-btn="#open-sidebar-btn">
-    <h2 style="margin:1.5rem;">Sidebar Content</h2>
-    <!-- Add your sidebar content here -->
-</sidebar-drawer>
 
+<button id="openSidebarBtn">Open Sidebar</button>
+<sidebar-drawer id="mySidebar">
+    <div style="padding:2rem;">
+        <h2>Sidebar Drawer</h2>
+        <p>This is your custom sidebar content.</p>
+        <button id="closeSidebarBtn">Close</button>
+    </div>
+</sidebar-drawer>
 <script>
-class SidebarDrawer extends HTMLElement {
-    connectedCallback() {
-        this.wrapper = this.querySelector('.sidebar-drawer-wrapper');
-        this.backdrop = this.querySelector('.sidebar-backdrop');
-        this.openBtnSelector = this.getAttribute('open-btn');
-        if (this.openBtnSelector) {
-            document.querySelector(this.openBtnSelector)?.addEventListener('click', () => this.open());
-        }
-        this.backdrop.addEventListener('click', () => this.close());
-    }
-    open() {
-        this.wrapper.classList.add('open');
-    }
-    close() {
-        this.wrapper.classList.remove('open');
-    }
-}
-customElements.define('sidebar-drawer', SidebarDrawer);
+    document.getElementById('openSidebarBtn').addEventListener('click', function() {
+        document.getElementById('mySidebar').open();
+    });
+    document.getElementById('closeSidebarBtn').addEventListener('click', function() {
+        document.getElementById('mySidebar').close();
+    });
 </script>
 
 

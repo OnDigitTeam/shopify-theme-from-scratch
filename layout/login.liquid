@@ -1,0 +1,17 @@
+{% comment %}
+  Custom Login Layout
+  - Wraps the login page with a custom layout
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page_title }}</title>
+    {{ content_for_header }}
+  </head>
+  <body class="login-layout">
+    <main role="main">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>

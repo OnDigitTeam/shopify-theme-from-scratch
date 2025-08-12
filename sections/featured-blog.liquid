@@ -1,0 +1,68 @@
+{% comment %}
+  Featured Blog Section with Slider
+  - Displays selected blog articles in a slider
+  - Includes schema for blog selection, slider options, and layout (class)
+  - No inline CSS; use class for layout
+{% endcomment %}
+
+<section class="featured-blog-section {{ section.settings.layout_class }}">
+  <div class="featured-blog-slider" id="featured-blog-slider-{{ section.id }}">
+    {% assign blog = blogs[section.settings.blog] %}
+    {% if blog.articles_count > 0 %}
+      <div class="slider-wrapper">
+        {% for article in blog.articles limit: section.settings.article_limit %}
+          <div class="slider-slide">
+            <a href="{{ article.url }}" class="featured-blog-article">
+              {% if article.image %}
+                <img src="{{ article.image | img_url: '480x480' }}" alt="{{ article.title }}" class="featured-blog-image" />
+              {% endif %}
+              <h3 class="featured-blog-title">{{ article.title }}</h3>
+              <div class="featured-blog-excerpt">{{ article.excerpt | strip_html | truncate: 100 }}</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="slider-prev" aria-label="Previous">&#8592;</button>
+      <button class="slider-next" aria-label="Next">&#8594;</button>
+    {% else %}
+      <p>No articles found in this blog.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Blog Slider",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog to feature"
+    },
+    {
+      "type": "range",
+      "id": "article_limit",
+      "label": "Number of articles",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "layout_class",
+      "label": "Layout Class",
+      "default": "featured-blog-layout"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Blog Slider"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+// Add your slider JS here or import from assets
+{% endjavascript %}
