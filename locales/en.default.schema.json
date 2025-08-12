@@ -1351,6 +1351,89 @@
         }
       }
     },
+    "testimonials": {
+      "blocks": {
+        "testimonial": {
+          "name": "Testimonial",
+          "settings": {
+            "author": {
+              "label": "Author"
+            },
+            "icon": {
+              "label": "Icon",
+              "options__1": {
+                "label": "None"
+              },
+              "options__2": {
+                "label": "Quote"
+              },
+              "options__3": {
+                "label": "5 stars"
+              },
+              "options__4": {
+                "label": "4 stars"
+              },
+              "options__5": {
+                "label": "3 stars"
+              },
+              "options__6": {
+                "label": "2 stars"
+              },
+              "options__7": {
+                "label": "1 star"
+              }
+            },
+            "image": {
+              "label": "Author's image"
+            },
+            "text": {
+              "label": "Testimonial"
+            }
+          }
+        }
+      },
+      "name": "Testimonials",
+      "presets": {
+        "name": "Testimonials"
+      },
+      "settings": {
+        "autorotate": {
+          "label": "Auto-rotate testimonials"
+        },
+        "autorotate_speed": {
+          "label": "Change testimonials every",
+          "unit": "s"
+        },
+        "hide_images": {
+          "label": "Hide testimonial images"
+        }
+      }
+    },
+    "rich-text": {
+      "blocks": {
+        "button": {
+          "name": "Buttons"
+        },
+        "heading": {
+          "name": "Heading"
+        },
+        "subheading": {
+          "name": "Subheading"
+        },
+        "text": {
+          "name": "Text"
+        }
+      },
+      "name": "Rich text",
+      "presets": {
+        "name": "Rich text"
+      },
+      "settings": {
+        "horizontal_content": {
+          "label": "Make content horizontally"
+        }
+      }
+    },
     "faq": {
       "blocks": {
         "question": {
