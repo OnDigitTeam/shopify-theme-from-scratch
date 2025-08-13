@@ -718,58 +718,83 @@
         }
       }
     },
-    "image_with_text": {
-      "name": "Image with Text",
-      "settings": { 
-        "image": {
-          "label": "Select image"
-        },
-        "image_position": {
-          "label": "Image Position",
-          "options": {
-            "image-left": "Left",
-            "image-right": "Right"
-          }
-        },
-        "bg_color": {
-          "label": "Background Color",
-          "options": {
-            "bg-white": "White",
-            "bg-gray": "Gray",
-            "bg-black": "Black"
-          }
-        },
-        "text_size": {
-          "label": "Text Size",
-          "options": {
-            "text-small": "Small",
-            "text-medium": "Medium",
-            "text-large": "Large"
-          }
-        }
-      },
+    "image-with-text": {
       "blocks": {
-        "heading": {
-          "name": "Heading",
-          "label": "Heading Text"          
+        "button": {
+          "name": "Buttons"
         },
-        "caption": {
-          "name": "Caption",
-          "label": "Caption Text"
+        "heading": {
+          "name": "Heading"
+        },
+        "subheading": {
+          "name": "Subheading"
         },
         "text": {
-          "name": "Text",
-          "label": "Body Text"
-        },
-        "button": {
-          "name": "Button",
-          "label": "Button Label",
-          "link": "Button Link"
+          "name": "Text"
         }
       },
+      "name": "Image with text",
       "presets": {
-        "default": {
-          "name": "Image with Text"
+        "name": "Image with text"
+      },
+      "settings": {
+        "enable_video_looping": {
+          "label": "Enable video looping"
+        },
+        "enlarge_content": {
+          "label": "Enlarge content"
+        },
+        "header__1": {
+          "content": "Shopify-hosted video"
+        },
+        "header__2": {
+          "content": "Or embed video from URL"
+        },
+        "layout": {
+          "label": "Desktop layout",
+          "options__1": {
+            "label": "Image first"
+          },
+          "options__2": {
+            "label": "Image second"
+          }
+        },
+        "mobile_layout": {
+          "label": "Mobile layout",
+          "options__1": {
+            "label": "Image first"
+          },
+          "options__2": {
+            "label": "Image second"
+          },
+          "options__3": {
+            "label": "No image"
+          },
+          "options__4": {
+            "label": "Overlap"
+          }
+        },
+        "paragraph": {
+          "content": "Shows when no Shopify-hosted video is selected."
+        },
+        "text_box_position": {
+          "label": "Desktop content position",
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Middle"
+          },
+          "options__3": {
+            "label": "Bottom"
+          }
+        },
+        "video": {
+          "label": "Video"
+        },
+        "video_url": {
+          "info": "Use a YouTube or Vimeo URL",
+          "label": "URL"
         }
       }
     },
