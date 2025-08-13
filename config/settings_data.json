@@ -16,15 +16,7 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
-    "header": {
-      "announcement": "Announcement",
-      "menu": "Menu",
-      "cart_count": {
-        "one": "{{ count }} item",
-        "other": "{{ count }} items"
-      }
-    },
+    
     "cart": {
       "title": "Your cart",
       "caption": "Cart items",

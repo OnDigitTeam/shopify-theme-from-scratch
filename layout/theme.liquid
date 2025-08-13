@@ -4,6 +4,8 @@
     <title>{{ page_title }}</title> 
     
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 
     {% # Load and preload the critical CSS %}
     {% render 'css-variables' %}
@@ -16,7 +18,14 @@
     {% # Inlined CSS Variables %}
     
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all">
-    
+    {%- if settings.predictive_search_enabled -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
+      >
+    {%- endif -%}
   </head>
 
   <body>
@@ -25,5 +34,6 @@
     {{ content_for_layout }}
 
     {% sections 'footer-group' %}
+    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
