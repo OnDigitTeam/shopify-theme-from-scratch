@@ -1268,7 +1268,7 @@ summary::-webkit-details-marker {
   background-size: 0 80%;
 }
 
-[animate] .highlighted-text[data-style=marker] {
+.highlighted-text[data-style=marker] {
   background-size: 100% 80%;
 }
 
@@ -1277,7 +1277,7 @@ summary::-webkit-details-marker {
   background-position: left 90%, left 50%;
 }
 
-[animate] .highlighted-text[data-style=underline] {
+.highlighted-text[data-style=underline] {
   background-size: 100% 3px, 0% 80%;
 }
 
@@ -1286,7 +1286,7 @@ summary::-webkit-details-marker {
   background-size: 0 28%;
 }
 
-[animate] .highlighted-text[data-style=bold-underline] {
+.highlighted-text[data-style=bold-underline] {
   background-size: 100% 28%;
 }
 
@@ -1294,7 +1294,7 @@ summary::-webkit-details-marker {
   transition: color 0.7s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-[animate] .highlighted-text[data-style=solid-color] {
+.highlighted-text[data-style=solid-color] {
   color: rgb(var(--color-highlight));
 }
 
