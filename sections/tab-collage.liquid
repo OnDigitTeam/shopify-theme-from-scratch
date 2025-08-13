@@ -3,12 +3,13 @@
 {% schema %}
 {
     "name": "t:sections.tab-collage.name",
-    "blocks":[],
-    "settings":[],
     "presets": [
         {
             "name": "t.sections.tab-collage.presets.name",
         }
     ],
+    "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  }
 }
 {% endschema %}

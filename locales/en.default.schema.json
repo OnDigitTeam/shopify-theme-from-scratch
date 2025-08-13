@@ -1469,11 +1469,14 @@
         }
       }
     },
-      "tab-collage":{
-        "name": "Tab Collage",
-        "presets":{
-          "name":"Tab Collage",
-        }
-    },
+    "tab-collage":{
+      "name": "Tab Collage",
+      "tag": "section",
+      "class": "section",
+      "presets":{
+        "name":"Tab Collage"
+    }
+    }
   }
 } 
+
