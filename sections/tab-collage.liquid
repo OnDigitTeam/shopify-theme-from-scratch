@@ -2,159 +2,182 @@
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-inner-padding : {{ section.settings.inner_padding }}px;
+    --section-inner-mobile-padding : {{ section.settings.innner_mobile_padding }}px;
+    --section-colors_background: {{ section.settings.colors_background }};
+    --section-tab-colors-heading : {{ section.settings.tab_colors_heading }};
+    --section-tab-colors-text : {{ section.settings.tab_colors_text }};
+    --section-tab-colors-border : {{ section.settings.tab_colors_border }};
   }
 {%- endstyle -%}
 
-<section class="section--padding tab-collage">
-  <div class="grid grid--reverse grid--gapless grid--1-col grid--2-col-tablet" style="gap:0;">
-    <!-- Column 1: Accordion -->
-    <div class="grid__item " style="background-color:red;max-width:50%;">
-      <div class="accordion">
-        <div
-          class="accordion-item active"
-          data-img="https://img.photographyblog.com/reviews/canon_eos_r50/photos/canon_eos_r50_02.jpg"
-        >
-          <div class="accordion-tab">
-            Tab 1
-            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
+<section class="section--padding tab-collage-section">
+  <div class="page-width page-width--full-width">
+    <div class="tab-collage grid {% if section.settings.desktop-layout == "image_first" %} desktop-grid--reverse {% endif %} {% if section.settings.mobile-layout == "image_first" %} mobile-grid--reverse {% endif %} grid--gapless grid--1-col grid--2-col-tablet">
+      <!-- Column 1: Accordion -->
+      <div class="grid__item text__grid-item">
+        <div class="accordion">
+          <div
+            class="accordion-item active"
+            data-img="https://img.photographyblog.com/reviews/canon_eos_r50/photos/canon_eos_r50_02.jpg"
+          >
+            <div class="accordion-tab">
+              Tab 1
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
+                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
+                and maintain the natural softness of children’s skin.
+              </p>
+            </div>
           </div>
-          <div class="accordion-content">
-            <p>
-              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
-              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
-              maintain the natural softness of children’s skin.
-            </p>
+          <div
+            class="accordion-item"
+            data-img="https://www.shutterstock.com/image-photo/wakawa-bay-marlborough-sounds-south-600nw-2460651725.jpg"
+          >
+            <div class="accordion-tab">
+              Tab 2
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
+                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
+                and maintain the natural softness of children’s skin.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="accordion-item"
-          data-img="https://www.shutterstock.com/image-photo/wakawa-bay-marlborough-sounds-south-600nw-2460651725.jpg"
-        >
-          <div class="accordion-tab">
-            Tab 2
-            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
+          <div class="accordion-item" data-img="https://live.staticflickr.com/4365/37082384235_a643fba80d_b.jpg">
+            <div class="accordion-tab">
+              Tab 3
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
+                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
+                and maintain the natural softness of children’s skin.
+              </p>
+            </div>
           </div>
-          <div class="accordion-content">
-            <p>
-              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
-              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
-              maintain the natural softness of children’s skin.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item" data-img="https://live.staticflickr.com/4365/37082384235_a643fba80d_b.jpg">
-          <div class="accordion-tab">
-            Tab 3
-            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <div class="accordion-content">
-            <p>
-              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
-              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
-              maintain the natural softness of children’s skin.
-            </p>
-          </div>
-        </div>
 
-        <div
-          class="accordion-item"
-          data-img="https://www.ricoh-imaging.co.jp/japan/products/kf/ex/img/ex-pic01-thumb.jpg"
-        >
-          <div class="accordion-tab">
-            Tab 4
-            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <div class="accordion-content">
-            <p>
-              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
-              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
-              maintain the natural softness of children’s skin.
-            </p>
+          <div
+            class="accordion-item"
+            data-img="https://www.ricoh-imaging.co.jp/japan/products/kf/ex/img/ex-pic01-thumb.jpg"
+          >
+            <div class="accordion-tab">
+              Tab 4
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
+                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
+                and maintain the natural softness of children’s skin.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Column 2: Image -->
-    <div class="grid__item " style="padding:0;max-width:50%;">
-      {% comment %}
-        <img
-          id="accordion-image"
-          src="https://via.placeholder.com/400x250/ff6666/ffffff?text=Image+1"
-          alt="Accordion Image"
-          style="width: 100%; border-radius: 10px;"
-        >
-      {% endcomment %}
-
-      <div class="image-animate media">
-        <img
-          srcset="{{ block.settings.image | image_url: height: image_height }} 1x, {{ block.settings.image | image_url: height: image_height_2x }} 2x"
-          src="{{ block.settings.image | image_url: height: image_height }}"
-          alt="{{ block.settings.image.alt | escape }}"
-          loading="lazy"
-          width="{{ image_height | times: block.settings.image.aspect_ratio }}"
-          height="{{ image_height }}"
-          class="promotion__image image-fit"
-          is="lazy-image"
-          id="accordion-image"
-          alt="Accordion Image"
-          style="width: 100%;"
-        >
+      <!-- Column 2: Image -->
+      <div class="grid__item " style="padding:0;">
+        <div class="image-animate media media--{{ section.settings.image_ratio }} media-mobile--{{ section.settings.mobile_image_ratio }}">
+          <img
+            srcset="{{ block.settings.image | image_url: height: image_height }} 1x, {{ block.settings.image | image_url: height: image_height_2x }} 2x"
+            src="{{ block.settings.image | image_url: height: image_height }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ image_height | times: block.settings.image.aspect_ratio }}"
+            height="{{ image_height }}"
+            class="promotion__image image-fit"
+            is="lazy-image"
+            id="accordion-image"
+            alt="Accordion Image"
+            style="width: 100%;"
+          >
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-    .grid--reverse{
-        flex-direction: row-reverse;
+    @media screen and (min-width:768px){
+        .tab-collage.desktop-grid--reverse{
+            flex-direction: row-reverse;
+        }
     }
-    .tab-collage .accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .tab-collage .accordion-tab {
-      width: 100%;
-      {% comment %} background: #f3f3f3; {% endcomment %}
 
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    @media screen and (max-width:768px){
+        .tab-collage.mobile-grid--reverse{
+            flex-direction: column-reverse;
+        }
+
+        .tab-collage .accordion {
+        padding:var(--section-inner-mobile-padding) !important;
+      }
+
+      }
+
+      .tab-collage .text__grid-item{
+        background-color:var(--section-colors_background);
     }
-    .tab-collage .accordion-tab:hover {
-      {% comment %} background: #e0e0e0; {% endcomment %}
+      .tab-collage .accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding:var(--section-inner-padding);
+      }
+      .tab-collage .accordion-tab {
+        width: 100%;
+        color: var(--section-tab-colors-heading);
+        {% comment %} background: #f3f3f3; {% endcomment %}
+        padding: 12px 16px;
+        text-align: left;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .tab-collage .accordion-tab:hover {
+        {% comment %} background: #e0e0e0; {% endcomment %}
+      }
+      .tab-collage .accordion-icon {
+        transition: transform 0.3s ease;
+      }
+      .tab-collage .accordion-item.active .accordion-icon {
+        transform: rotate(180deg);
+      }
+      .tab-collage .accordion-content {
+        display: none;
+        padding: 10px 15px;
+        color:var(--section-tab-colors-text);
+        {% comment %} background: #fafafa; {% endcomment %}
+        border-radius: 0 0 6px 6px;
+      }
+      .tab-collage .accordion-item.active .accordion-content {
+        display: block;
+      }
+      .tab-collage .accordion-item{
+    border-bottom:2px solid var(--section-tab-colors-border);
     }
-    .tab-collage .accordion-icon {
-      transition: transform 0.3s ease;
-    }
-    .tab-collage .accordion-item.active .accordion-icon {
-      transform: rotate(180deg);
-    }
-    .tab-collage .accordion-content {
-      display: none;
-      padding: 10px 15px;
-      {% comment %} background: #fafafa; {% endcomment %}
-      border-radius: 0 0 6px 6px;
-    }
-    .tab-collage .accordion-item.active .accordion-content {
-      display: block;
-    }
-    .tab-collage .accordion-item{
-  border-bottom:2px solid #000;
+    @media screen and (max-width:768px){
+     {% comment %} .tab-collage .grid__item{
+      width:100%;
+      } {% endcomment %}
   }
 </style>
 
@@ -196,137 +219,297 @@
 {
   "name": "t:sections.tab-collage.name",
   "settings": [
-     {
+    {
       "type": "header",
       "content": "Desktop Settings"
     },
     {
       "type": "select",
+      "id": "desktop_tab_heading_size",
+      "options": [
+        {
+          "value": "typeset",
+          "label": "t:sections.all.text_size.options__1.label"
+        },
+        {
+          "value": "typeset2",
+          "label": "t:sections.all.text_size.options__2.label"
+        },
+        {
+          "value": "typeset3",
+          "label": "t:sections.all.text_size.options__3.label"
+        }
+      ],
+      "default": "typeset2",
+      "label": "Tab Heading"
+    },
+
+    {
+      "type": "select",
+      "id": "desktop_tab_content_size",
+      "options": [
+        {
+          "value": "typeset",
+          "label": "t:sections.all.text_size.options__1.label"
+        },
+        {
+          "value": "typeset2",
+          "label": "t:sections.all.text_size.options__2.label"
+        },
+        {
+          "value": "typeset3",
+          "label": "t:sections.all.text_size.options__3.label"
+        }
+      ],
+      "default": "typeset2",
+      "label": "Tab content"
+    },
+
+    {
+      "type": "select",
       "id": "desktop-layout",
       "options": [
         {
-          "value": "image_first",
-          "label": "Image First"
-        },
-        {
           "value": "text_first",
           "label": "Text First"
+        },
+        {
+          "value": "image_first",
+          "label": "Image First"
         }
       ],
-      "default":"text_first",
-      "label": "Desktop layout",
+      "default": "text_first",
+      "label": "Desktop layout"
     },
-     {
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "label": "t:sections.all.image_ratio.options__1.label",
+          "value": "adapt"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__2.label",
+          "value": "400px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__3.label",
+          "value": "450px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__4.label",
+          "value": "500px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__5.label",
+          "value": "550px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__6.label",
+          "value": "600px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__7.label",
+          "value": "650px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__8.label",
+          "value": "700px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__9.label",
+          "value": "750px"
+        },
+        {
+          "label": "t:sections.all.image_ratio.options__10.label",
+          "value": "100vh"
+        }
+      ],
+      "default": "650px",
+      "label": "t:sections.all.image_ratio.label"
+    },
+    {
+      "type": "range",
+      "id": "inner_padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "Padding",
+      "default": 40
+    },
+    {
       "type": "header",
       "content": "Mobile Settings"
+    },
+    {
+      "type": "select",
+      "id": "mobile_tab_heading_size",
+      "options": [
+        {
+          "value": "typeset",
+          "label": "t:sections.all.text_size.options__1.label"
+        },
+        {
+          "value": "typeset2",
+          "label": "t:sections.all.text_size.options__2.label"
+        },
+        {
+          "value": "typeset3",
+          "label": "t:sections.all.text_size.options__3.label"
+        }
+      ],
+      "default": "typeset2",
+      "label": "Tab Heading"
+    },
+
+    {
+      "type": "select",
+      "id": "mobile_tab_content_size",
+      "options": [
+        {
+          "value": "typeset",
+          "label": "t:sections.all.text_size.options__1.label"
+        },
+        {
+          "value": "typeset2",
+          "label": "t:sections.all.text_size.options__2.label"
+        },
+        {
+          "value": "typeset3",
+          "label": "t:sections.all.text_size.options__3.label"
+        }
+      ],
+      "default": "typeset2",
+      "label": "Tab Content"
+    },
+
+    {
+      "type": "select",
+      "id": "mobile_image_ratio",
+      "options": [
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__1.label",
+          "value": "auto"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__2.label",
+          "value": "200px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__3.label",
+          "value": "250px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__4.label",
+          "value": "300px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__5.label",
+          "value": "400px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__6.label",
+          "value": "500px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__7.label",
+          "value": "600px"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__8.label",
+          "value": "100vh"
+        },
+        {
+          "label": "t:sections.all.mobile_layout.mobile_image_ratio.options__9.label",
+          "value": "adapt"
+        }
+      ],
+      "default": "auto",
+      "label": "t:sections.all.mobile_layout.mobile_image_ratio.label"
     },
     {
       "type": "select",
       "id": "mobile-layout",
       "options": [
         {
-          "value": "image_first",
-          "label": "Image First"
-        },
-        {
           "value": "text_first",
           "label": "Text First"
+        },
+        {
+          "value": "image_first",
+          "label": "Image First"
         }
       ],
-      "default":"text_first",
-      "label": "Mobile layout",
+      "default": "text_first",
+      "label": "Mobile layout"
+    },
+    {
+      "type": "range",
+      "id": "innner_mobile_padding",
+      "min": 0,
+      "max": 80,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "Padding",
+      "default": 20
     },
     {
       "type": "header",
       "content": "t:sections.all.colors.header.content"
     },
     {
-      "type": "color",
-      "id": "colors_highlight",
-      "label": "t:sections.all.colors.colors_highlight.label",
-      "default": "#ffb503"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.header.content"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "t:sections.all.padding.padding_top.unit",
-      "label": "t:sections.all.padding.padding_top.label",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "t:sections.all.padding.padding_bottom.unit",
-      "label": "t:sections.all.padding.padding_bottom.label",
-      "default": 36
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.highlight.header.content"
-    },
-    {
       "type": "checkbox",
-      "id": "enable_highlight",
-      "label": "t:sections.all.highlight.enable.label",
-      "info": "t:sections.all.highlight.enable.info",
-      "default": false
+      "id": "use_custom_colors",
+      "default": false,
+      "label": "t:sections.all.colors.use_custom_colors.label"
     },
     {
-      "type": "select",
-      "id": "highlight_style",
-      "options": [
-        {
-          "value": "marker",
-          "label": "t:sections.all.highlight.style.options__1.label"
-        },
-        {
-          "value": "circle",
-          "label": "t:sections.all.highlight.style.options__2.label"
-        },
-        {
-          "value": "underline",
-          "label": "t:sections.all.highlight.style.options__3.label"
-        },
-        {
-          "value": "bold-underline",
-          "label": "t:sections.all.highlight.style.options__4.label"
-        },
-        {
-          "value": "modern-underline",
-          "label": "t:sections.all.highlight.style.options__5.label"
-        },
-        {
-          "value": "sketch-underline",
-          "label": "t:sections.all.highlight.style.options__6.label"
-        },
-        {
-          "value": "squiggle",
-          "label": "t:sections.all.highlight.style.options__7.label"
-        },
-        {
-          "value": "heavy-squiggle",
-          "label": "t:sections.all.highlight.style.options__8.label"
-        },
-        {
-          "value": "solid-color",
-          "label": "t:sections.all.highlight.style.options__9.label"
-        }
-      ],
-      "default": "marker",
-      "label": "t:sections.all.highlight.style.label"
+      "type": "color",
+      "id": "tab_colors_heading",
+      "label": "Tab heading color",
+      "default": "#212326"
+    },
+    {
+      "type": "color",
+      "id": "tab_colors_text",
+      "label": "Tab text color",
+      "default": "#212326"
+    },
+    {
+      "type": "color",
+      "id": "tab_colors_border",
+      "label": "Tab border color",
+      "default": "#212326"
+    },
+    {
+      "type": "color",
+      "id": "colors_background",
+      "label": "t:sections.all.colors.colors_background.label",
+      "default": "#ffffff"
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "Tab",
+      "name": "Tab",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_heading",
+          "label": "Tab Heading",
+          "default": "Tab Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_content",
+          "label": "Tab Content",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "t:sections.tab-collage.presets.name"
