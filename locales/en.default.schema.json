@@ -1469,5 +1469,8 @@
         }
       }
     },
+      "tab-collage":{
+        "name": "Tab Collage",
+    },
   }
 } 
