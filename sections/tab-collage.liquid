@@ -4,10 +4,40 @@
 {% schema %}
 {
     "name": "t:sections.tab-collage.name",
-    "settings" : [ {
+    "settings" : [
+         {
       "type": "paragraph",
       "content": "t:sections.slideshow.settings.paragraph.content"
-    }],
+    }
+        {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.tab-collage.settings.title.label",
+            "default": "Tab Collage"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "t:sections.tab-collage.settings.description.label",
+            "default": "This is a sample description for the tab collage section."
+        },
+        {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "t:sections.tab-collage.settings.image_1.label"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "t:sections.tab-collage.settings.image_2.label"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "t:sections.tab-collage.settings.image_3.label"
+        }
+    ],
+    "blocks": [],
     "presets": [
         {
             "name": "t:sections.tab-collage.presets.name",
