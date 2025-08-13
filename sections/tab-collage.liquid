@@ -506,13 +506,26 @@
           "id": "tab_content",
           "label": "Tab Content",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "tab_image",
+          "label": "t:sections.all.image.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.tab-collage.presets.name"
+      "name": "t:sections.tab-collage.presets.name",
+      "blocks": [
+        {
+          "type": "Tab"
+        },
+        {
+          "type": "Tab"
+        }
+      ]
     }
   ],
   "disabled_on": {
