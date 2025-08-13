@@ -1471,6 +1471,9 @@
     },
       "tab-collage":{
         "name": "Tab Collage",
+        "presets":{
+          "name":"Tab Collage",
+        }
     },
   }
 } 
