@@ -61,7 +61,7 @@
     <div class="{{ grid_class }} grid grid--gapless grid--1-col grid--2-col-tablet">
       <div class="grid__item">
         {% if section.settings.video == blank and section.settings.video_url == blank %}
-        <use-animate data-animate="zoom-fade" class="media-wrapper">
+        <use-animate animate="" data-animate="zoom-fade" class="media-wrapper">
           <div class="image-animate media--{{ section.settings.image_ratio }} media-mobile--{{ section.settings.mobile_image_ratio }} {% if section.settings.image != blank %}media{% else %}media--placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
             {%- if section.settings.image != blank -%}
               {%- if section.settings.image_behavior == 'ambient' -%}

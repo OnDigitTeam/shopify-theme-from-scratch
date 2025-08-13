@@ -14,5 +14,8 @@
     --color-background: {{ settings.background_color }};
     --color-foreground: {{ settings.foreground_color }};
     --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
+    --font-button-family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }};
+    --font-button-size: {{ settings.type_button_size }}px;
+    --font-button-baseline: {% if button_font_baseline >= 2 %}{{ button_font_baseline | divided_by: 10.0 }}{% else %}0{% endif %}rem;
   }
 {% endstyle %}

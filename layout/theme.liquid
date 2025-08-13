@@ -2,17 +2,19 @@
 <html lang="{{ request.locale.iso_code }}">
   <head>
     <title>{{ page_title }}</title> 
-    {% # Inlined CSS Variables %}
-    {% render 'css-variables' %}
+    
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
     {% # Load and preload the critical CSS %}
+    {% render 'css-variables' %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
+    {% # Inlined CSS Variables %}
+    
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all">
     
   </head>
