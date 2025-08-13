@@ -1,50 +1,338 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
 
+<section class="section--padding tab-collage">
+  <div class="grid grid--reverse grid--gapless grid--1-col grid--2-col-tablet" style="gap:0;">
+    <!-- Column 1: Accordion -->
+    <div class="grid__item " style="background-color:red;max-width:50%;">
+      <div class="accordion">
+        <div
+          class="accordion-item active"
+          data-img="https://img.photographyblog.com/reviews/canon_eos_r50/photos/canon_eos_r50_02.jpg"
+        >
+          <div class="accordion-tab">
+            Tab 1
+            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
+              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
+              maintain the natural softness of children’s skin.
+            </p>
+          </div>
+        </div>
+        <div
+          class="accordion-item"
+          data-img="https://www.shutterstock.com/image-photo/wakawa-bay-marlborough-sounds-south-600nw-2460651725.jpg"
+        >
+          <div class="accordion-tab">
+            Tab 2
+            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
+              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
+              maintain the natural softness of children’s skin.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item" data-img="https://live.staticflickr.com/4365/37082384235_a643fba80d_b.jpg">
+          <div class="accordion-tab">
+            Tab 3
+            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
+              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
+              maintain the natural softness of children’s skin.
+            </p>
+          </div>
+        </div>
 
+        <div
+          class="accordion-item"
+          data-img="https://www.ricoh-imaging.co.jp/japan/products/kf/ex/img/ex-pic01-thumb.jpg"
+        >
+          <div class="accordion-tab">
+            Tab 4
+            <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr. Coke’s
+              baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect and
+              maintain the natural softness of children’s skin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Image -->
+    <div class="grid__item " style="padding:0;max-width:50%;">
+      {% comment %}
+        <img
+          id="accordion-image"
+          src="https://via.placeholder.com/400x250/ff6666/ffffff?text=Image+1"
+          alt="Accordion Image"
+          style="width: 100%; border-radius: 10px;"
+        >
+      {% endcomment %}
+
+      <div class="image-animate media">
+        <img
+          srcset="{{ block.settings.image | image_url: height: image_height }} 1x, {{ block.settings.image | image_url: height: image_height_2x }} 2x"
+          src="{{ block.settings.image | image_url: height: image_height }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ image_height | times: block.settings.image.aspect_ratio }}"
+          height="{{ image_height }}"
+          class="promotion__image image-fit"
+          is="lazy-image"
+          id="accordion-image"
+          alt="Accordion Image"
+          style="width: 100%;"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .grid--reverse{
+        flex-direction: row-reverse;
+    }
+    .tab-collage .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tab-collage .accordion-tab {
+      width: 100%;
+      {% comment %} background: #f3f3f3; {% endcomment %}
+
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tab-collage .accordion-tab:hover {
+      {% comment %} background: #e0e0e0; {% endcomment %}
+    }
+    .tab-collage .accordion-icon {
+      transition: transform 0.3s ease;
+    }
+    .tab-collage .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+    .tab-collage .accordion-content {
+      display: none;
+      padding: 10px 15px;
+      {% comment %} background: #fafafa; {% endcomment %}
+      border-radius: 0 0 6px 6px;
+    }
+    .tab-collage .accordion-item.active .accordion-content {
+      display: block;
+    }
+    .tab-collage .accordion-item{
+  border-bottom:2px solid #000;
+  }
+</style>
+
+<script>
+  const items = document.querySelectorAll('.accordion-item');
+  const imgEl = document.getElementById('accordion-image');
+
+  let lastOpenedImg = '';
+
+  items.forEach((item) => {
+    const tab = item.querySelector('.accordion-tab');
+    tab.addEventListener('click', () => {
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+
+        const anyOpen = [...items].some((i) => i.classList.contains('active'));
+
+        if (!anyOpen) {
+          imgEl.src = lastOpenedImg;
+        }
+      } else {
+        items.forEach((i) => i.classList.remove('active'));
+        item.classList.add('active');
+
+        lastOpenedImg = item.getAttribute('data-img');
+        imgEl.src = lastOpenedImg;
+      }
+    });
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    items[0].classList.add('active');
+    lastOpenedImg = items[0].getAttribute('data-img');
+    imgEl.src = lastOpenedImg;
+  });
+</script>
 
 {% schema %}
 {
-    "name": "t:sections.tab-collage.name",
-    "settings" : [
-         {
-      "type": "paragraph",
-      "content": "t:sections.slideshow.settings.paragraph.content"
+  "name": "t:sections.tab-collage.name",
+  "settings": [
+     {
+      "type": "header",
+      "content": "Desktop Settings"
     },
+    {
+      "type": "select",
+      "id": "desktop-layout",
+      "options": [
         {
-            "type": "text",
-            "id": "title",
-            "label": "t:sections.tab-collage.settings.title.label",
-            "default": "Tab Collage"
+          "value": "image_first",
+          "label": "Image First"
         },
         {
-            "type": "textarea",
-            "id": "description",
-            "label": "t:sections.tab-collage.settings.description.label",
-            "default": "This is a sample description for the tab collage section."
-        },
-        {
-            "type": "image_picker",
-            "id": "image_1",
-            "label": "t:sections.tab-collage.settings.image_1.label"
-        },
-        {
-            "type": "image_picker",
-            "id": "image_2",
-            "label": "t:sections.tab-collage.settings.image_2.label"
-        },
-        {
-            "type": "image_picker",
-            "id": "image_3",
-            "label": "t:sections.tab-collage.settings.image_3.label"
+          "value": "text_first",
+          "label": "Text First"
         }
-    ],
-    "blocks": [],
-    "presets": [
+      ],
+      "default":"text_first",
+      "label": "Desktop layout",
+    },
+     {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "select",
+      "id": "mobile-layout",
+      "options": [
         {
-            "name": "t:sections.tab-collage.presets.name",
-            
+          "value": "image_first",
+          "label": "Image First"
+        },
+        {
+          "value": "text_first",
+          "label": "Text First"
         }
-    ],
-    "disabled_on": {
+      ],
+      "default":"text_first",
+      "label": "Mobile layout",
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.colors.header.content"
+    },
+    {
+      "type": "color",
+      "id": "colors_highlight",
+      "label": "t:sections.all.colors.colors_highlight.label",
+      "default": "#ffb503"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.header.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_top.unit",
+      "label": "t:sections.all.padding.padding_top.label",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "t:sections.all.padding.padding_bottom.unit",
+      "label": "t:sections.all.padding.padding_bottom.label",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.highlight.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_highlight",
+      "label": "t:sections.all.highlight.enable.label",
+      "info": "t:sections.all.highlight.enable.info",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "highlight_style",
+      "options": [
+        {
+          "value": "marker",
+          "label": "t:sections.all.highlight.style.options__1.label"
+        },
+        {
+          "value": "circle",
+          "label": "t:sections.all.highlight.style.options__2.label"
+        },
+        {
+          "value": "underline",
+          "label": "t:sections.all.highlight.style.options__3.label"
+        },
+        {
+          "value": "bold-underline",
+          "label": "t:sections.all.highlight.style.options__4.label"
+        },
+        {
+          "value": "modern-underline",
+          "label": "t:sections.all.highlight.style.options__5.label"
+        },
+        {
+          "value": "sketch-underline",
+          "label": "t:sections.all.highlight.style.options__6.label"
+        },
+        {
+          "value": "squiggle",
+          "label": "t:sections.all.highlight.style.options__7.label"
+        },
+        {
+          "value": "heavy-squiggle",
+          "label": "t:sections.all.highlight.style.options__8.label"
+        },
+        {
+          "value": "solid-color",
+          "label": "t:sections.all.highlight.style.options__9.label"
+        }
+      ],
+      "default": "marker",
+      "label": "t:sections.all.highlight.style.label"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "t:sections.tab-collage.presets.name"
+    }
+  ],
+  "disabled_on": {
     "groups": ["header", "footer", "custom.overlay"]
   }
 }
