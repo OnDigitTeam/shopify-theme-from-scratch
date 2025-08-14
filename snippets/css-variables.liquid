@@ -18,6 +18,7 @@
     --font-button-size: {{ settings.type_button_size }}px;
     --font-button-baseline: {% if button_font_baseline >= 2 %}{{ button_font_baseline | divided_by: 10.0 }}{% else %}0{% endif %}rem;
 
+    --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
     --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
     --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
