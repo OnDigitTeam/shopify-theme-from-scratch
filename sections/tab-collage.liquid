@@ -1,7 +1,5 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
-    --section-padding-top: {{ section.settings.padding_top }}px;
-    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     --section-inner-padding : {{ section.settings.inner_padding }}px;
     --section-inner-mobile-padding : {{ section.settings.innner_mobile_padding }}px;
     --section-colors_background: {{ section.settings.colors_background }};
@@ -45,7 +43,7 @@
               <div class="accordion-item{% if first_tab == 1 %} active{% endif %}" data-index="{{ forloop.index0 }}">
                 <div class="accordion-tab">
                   <span class="{{section.settings.desktop_tab_heading_size}} {{ section.settings.mobile_tab_heading_size }}">
-                    {{- block.settings.tab_heading -}}
+                    {{ block.settings.tab_heading }}
                   </span>
                   <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
                     <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" />
