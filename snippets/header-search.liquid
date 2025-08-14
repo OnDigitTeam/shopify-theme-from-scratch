@@ -8,6 +8,7 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
+
 <details-modal class="header__search">
   <details>
     <summary
@@ -17,10 +18,17 @@
     >
       <span>
         <span class="svg-wrapper">
-          {{- 'icon-search.svg' | inline_asset_content -}}
+          <svg class="icon icon-search modal__toggle-open" aria-hidden="true" focusable="false">
+                    <use href="#icon-search"></use>
+                  </svg>
+                  
+
+          
         </span>
         <span class="svg-wrapper header__icon-close">
-          {{- 'icon-close.svg' | inline_asset_content -}}
+          <svg class="icon icon-close modal__toggle-close" aria-hidden="true" focusable="false">
+                    <use href="#icon-close"></use>
+                  </svg>
         </span>
       </span>
     </summary>

@@ -14,8 +14,16 @@
     --color-background: {{ settings.background_color }};
     --color-foreground: {{ settings.foreground_color }};
     --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
-    --font-button-family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }};
+    --font-button-family: {{ settings.type_button_font.family }};
     --font-button-size: {{ settings.type_button_size }}px;
     --font-button-baseline: {% if button_font_baseline >= 2 %}{{ button_font_baseline | divided_by: 10.0 }}{% else %}0{% endif %}rem;
+
+    --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+    --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+    --font-heading-style: {{ settings.type_header_font.style }};
+    --font-heading-weight: {{ settings.type_header_font.weight }};
+
+
   }
 {% endstyle %}

@@ -2616,3 +2616,8 @@ header-menu > details,
 details-disclosure > details {
   position: relative;
 }
+
+.section--padding {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+  }
