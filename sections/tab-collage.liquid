@@ -17,7 +17,30 @@
       <!-- Column 1: Accordion -->
       <div class="grid__item text__grid-item">
         <div class="accordion">
-          <div
+
+          {%- for block in section.blocks -%}
+              {%- case block.type -%}
+              {%- when "tab" -%}
+
+           <div
+            class="accordion-item active"
+            data-img="{% if block.settings.image %} {{ block.settings.image }} {% endif %}"
+          >
+            <div class="accordion-tab">
+              {{ block.settings.tab_heading }}
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="accordion-content">
+              <p>{{ block.settings.tab_content }}</p>
+            </div>
+          </div>
+              {%- endcase -%}
+          {%- endfor -%}
+
+
+          {% comment %} <div
             class="accordion-item active"
             data-img="https://img.photographyblog.com/reviews/canon_eos_r50/photos/canon_eos_r50_02.jpg"
           >
@@ -34,8 +57,8 @@
                 and maintain the natural softness of children’s skin.
               </p>
             </div>
-          </div>
-          <div
+          </div> {% endcomment %}
+          {% comment %} <div
             class="accordion-item"
             data-img="https://www.shutterstock.com/image-photo/wakawa-bay-marlborough-sounds-south-600nw-2460651725.jpg"
           >
@@ -86,7 +109,7 @@
                 and maintain the natural softness of children’s skin.
               </p>
             </div>
-          </div>
+          </div> {% endcomment %}
         </div>
       </div>
 
@@ -491,7 +514,7 @@
   ],
   "blocks": [
     {
-      "type": "Tab",
+      "type": "tab",
       "name": "Tab",
       "limit": 5,
       "settings": [
@@ -520,10 +543,10 @@
       "name": "t:sections.tab-collage.presets.name",
       "blocks": [
         {
-          "type": "Tab"
+          "type": "tab"
         },
         {
-          "type": "Tab"
+          "type": "tab"
         }
       ]
     }
