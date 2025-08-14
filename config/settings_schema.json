@@ -24,7 +24,7 @@
       {
         "type": "range",
         "id": "heading_scale",
-        "min": 80,
+        "min": 50,
         "max": 150,
         "step": 5,
         "unit": "t:settings_schema.typography.settings.heading_scale.unit",
