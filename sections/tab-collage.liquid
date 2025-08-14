@@ -11,6 +11,26 @@
   }
 {%- endstyle -%}
 
+{{ 'section-tab-collage.css' | asset_url | stylesheet_tag }}
+{{ 'section-tab-collage.js' | asset_url | script_tag }}
+
+<style>
+  {% if section.settings.use_custom_colors %}
+      .tab-collage .text__grid-item{
+        background-color:var(--section-colors_background);
+    }
+    .tab-collage .accordion-tab {
+        color: var(--section-tab-colors-heading);
+    }
+    .tab-collage .accordion-item{
+    border-bottom:2px solid var(--section-tab-colors-border);
+    }
+     .tab-collage .accordion-content {
+        color:var(--section-tab-colors-text);
+     }
+  {% endif %}
+</style>
+
 {% assign first_tab = 1 %}
 
 <section class="section--padding tab-collage-section">
@@ -24,7 +44,9 @@
             {%- if block.type == 'tab' -%}
               <div class="accordion-item{% if first_tab == 1 %} active{% endif %}" data-index="{{ forloop.index0 }}">
                 <div class="accordion-tab">
-                  <span class="{{section.settings.desktop_tab_heading_size}} {{ section.settings.mobile_tab_heading_size }}">{{ block.settings.tab_heading }}</span>
+                  <span class="{{section.settings.desktop_tab_heading_size}} {{ section.settings.mobile_tab_heading_size }}">
+                    {{- block.settings.tab_heading -}}
+                  </span>
                   <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
                     <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" />
                   </svg>
@@ -67,160 +89,6 @@
     </div>
   </div>
 </section>
-
-<style>
-    @media screen and (min-width:768px){
-        .tab-collage.desktop-grid--reverse{
-            flex-direction: row-reverse;
-        }
-    }
-
-    @media screen and (max-width:768px){
-        .tab-collage.mobile-grid--reverse{
-            flex-direction: column-reverse;
-        }
-
-        .tab-collage .accordion {
-        padding:var(--section-inner-mobile-padding) !important;
-      }
-
-      }
-
-      @media screen and (min-width:768px){
-              .desktop-tabhsize{
-        font-size:18px;
-      }
-      .desktop-tabhsize2{
-        font-size:20px;
-      }
-      .desktop-tabhsize3{
-        font-size:22px;
-      }
-
-      .desktop-tabcsize{
-        font-size:16px;
-      }
-      .desktop-tabcsize2{
-        font-size:18px;
-      }
-      .desktop-tabcsize3{
-        font-size:20px;
-      }
-    }
-      @media screen and (max-width:768px){
-
-           .mobile-tabhsize{
-            font-size:16px;
-          }
-          .mobile-tabhsize2{
-            font-size:18px;
-          }
-          .mobile-tabhsize3{
-            font-size:20px;
-          }
-
-      .mobile-tabcsize{
-        font-size:14px;
-      }
-      .mobile-tabcsize2{
-        font-size:16px;
-      }
-      .mobile-tabcsize3{
-        font-size:18px;
-      }
-
-      }
-
-      .tab-collage .text__grid-item{
-        background-color:var(--section-colors_background);
-    }
-      .tab-collage .accordion {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding:var(--section-inner-padding);
-      }
-      .tab-collage .accordion-tab {
-        width: 100%;
-        color: var(--section-tab-colors-heading);
-        padding: 12px 16px;
-        text-align: left;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .tab-collage .accordion-tab:hover {
-        {% comment %} background: #e0e0e0; {% endcomment %}
-      }
-      .tab-collage .accordion-icon {
-        transition: transform 0.3s ease;
-      }
-      .tab-collage .accordion-item.active .accordion-icon {
-        transform: rotate(180deg);
-      }
-      .tab-collage .accordion-content {
-        display: none;
-        padding: 10px 15px;
-        color:var(--section-tab-colors-text);
-        border-radius: 0 0 6px 6px;
-      }
-      .tab-collage .accordion-item.active .accordion-content {
-        display: block;
-      }
-      .tab-collage .accordion-item{
-    border-bottom:2px solid var(--section-tab-colors-border);
-    }
-
-    .accordion-image {
-    position: relative;
-  }
-  .tab-image {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .tab-image.active {
-    opacity: 1;
-    position: relative;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const accordionItems = document.querySelectorAll('.accordion-item');
-    const tabImages = document.querySelectorAll('.tab-image');
-
-    let lastActiveImageIndex = 0;
-
-    accordionItems.forEach((item, index) => {
-      const tab = item.querySelector('.accordion-tab');
-
-      tab.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        accordionItems.forEach((i) => i.classList.remove('active'));
-        tabImages.forEach((img) => img.classList.remove('active'));
-
-        if (!isActive) {
-          item.classList.add('active');
-          tabImages[index].classList.add('active');
-          lastActiveImageIndex = index;
-        } else {
-          tabImages[lastActiveImageIndex].classList.add('active');
-        }
-      });
-    });
-
-    // Ensure first image is visible initially
-    tabImages[0].classList.add('active');
-    lastActiveImageIndex = 0;
-  });
-</script>
 
 {% schema %}
 {
@@ -495,25 +363,25 @@
   "blocks": [
     {
       "type": "tab",
-      "name": "Tab",
+      "name": "t:sections.tab-collage.blocks.tab.label",
       "limit": 5,
       "settings": [
         {
           "type": "text",
           "id": "tab_heading",
-          "label": "Tab Heading",
+          "label": "t:sections.tab-collage.blocks.tab.settings.heading_label",
           "default": "Tab Heading"
         },
         {
           "type": "richtext",
           "id": "tab_content",
-          "label": "Tab Content",
+          "label": "t:sections.tab-collage.blocks.tab.settings.content_label",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
         },
         {
           "type": "image_picker",
           "id": "tab_image",
-          "label": "t:sections.all.image.label"
+          "label": "t:sections.tab-collage.blocks.tab.settings.image_label"
         }
       ]
     }

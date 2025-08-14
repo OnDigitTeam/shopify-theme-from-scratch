@@ -1545,6 +1545,16 @@
           }
         }
       },
+      "blocks": {
+        "tab": {
+          "label": "Tab",
+          "settings": {
+            "heading_label": "Tab heading",
+            "content_label": "Tab content",
+            "image_label": "Tab Image",
+          }
+        }
+      },
       "presets": {
         "name": "Tab Collage"
       }
