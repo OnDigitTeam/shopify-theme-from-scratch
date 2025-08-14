@@ -207,7 +207,7 @@
 
 {% schema %}
 {
-  "name": "Image with text overlay",
+  "name": "t:sections.image-text-with-overlay.name",
   "settings": [
     {
       "type": "checkbox",
@@ -221,19 +221,19 @@
       "options": [
         {
           "value": "left",
-          "label": "Left"
+          "label": "t:sections.image-text-with-overlay.settings.layout.left"
         },
         {
           "value": "middle",
-          "label": "Middle"
+          "label": "t:sections.image-text-with-overlay.settings.layout.middle"
         },
         {
           "value": "right",
-          "label": "Right"
+          "label": "t:sections.image-text-with-overlay.settings.layout.right"
         }
       ],
       "default": "right",
-      "label": "Text layout"
+      "label": "t:sections.image-text-with-overlay.settings.layout.label"
     },
     {
       "type": "select",
@@ -282,13 +282,13 @@
       "max": 80,
       "step": 5,
       "unit": "%",
-      "label": "Text container width",
+      "label": "t:sections.image-text-with-overlay.settings.overlay_width.label",
       "default": 50
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Image"
+      "label": "t:sections.all.image.label"
     },
     {
       "type": "select",
@@ -453,31 +453,31 @@
       "max": 92,
       "step": 4,
       "unit": "%",
-      "label": "Color background overlay opacity",
+      "label": "t:sections.image-text-with-overlay.settings.background_overlay_opacity.label",
       "default": 52
     },
     {
       "type": "checkbox",
       "id": "use_custom_colors_for_mobile",
       "default": false,
-      "label": "Use different mobile colors"
+      "label": "t:sections.image-text-with-overlay.settings.use_custom_colors_for_mobile.label"
     },
      {
       "type": "color",
       "id": "mobile_colors_button_label",
-      "label": "Mobile Solid button label",
+      "label": "t:sections.image-text-with-overlay.settings.mobile.colors.mobile_colors_button_label",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "mobile_colors_button_background",
-      "label": "Mobile Solid button background",
+      "label": "t:sections.image-text-with-overlay.settings.mobile.colors.mobile_colors_button_background",
       "default": "#1a1b18"
     },
     {
       "type": "color",
       "id": "mobile_colors_text",
-      "label": "Mobile Text",
+      "label": "t:sections.image-text-with-overlay.settings.mobile.colors.mobile_colors_text",
       "default": "#212326"
     },
   ],
@@ -490,7 +490,7 @@
         {
           "type": "inline_richtext",
           "id": "heading",
-          "default": "Image with text",
+          "default": "Image with text overlay",
           "label": "t:sections.all.heading.label"
         },
         {
@@ -889,7 +889,7 @@
   ],
   "presets": [
     {
-      "name": "Image with text overlay",
+      "name": "t:sections.image-text-with-overlay.name",
       "blocks": [
         {
           "type": "heading"
