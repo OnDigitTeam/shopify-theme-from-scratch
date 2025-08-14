@@ -415,6 +415,7 @@ blockquote {
 .typeset2,
 .typeset3 {
   line-height: calc(1 + 0.4 / var(--font-body-scale));
+  line-height: 1.3;
   color: rgb(var(--color-foreground));
 }
 
@@ -429,22 +430,24 @@ blockquote {
 }
 
 .typeset {
-  font-size: 1.5rem;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 750px) {
   .typeset {
-    font-size: 1.6rem;
+    font-size: 16px;
   }
 }
 
 .typeset2 {
   font-size: 1.8rem;
+  font-size: 18px;
 }
 
 @media screen and (min-width: 750px) {
   .typeset2 {
     font-size: 2rem;
+    font-size: 18px;
   }
 }
 
