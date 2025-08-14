@@ -148,11 +148,9 @@
       "collection_card": {
         "label": "Collection card"
       },
-      
       "colors": {
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings.",
-        
         "background_opacity": {
           "label": "Background opacity",
           "unit": "%"
@@ -207,7 +205,6 @@
         "use_custom_colors": {
           "label": "Use custom colors"
         }
-        
       },
       "form": {
         "return_url": {
@@ -468,6 +465,10 @@
         "padding_top": {
           "label": "Top padding",
           "unit": "px"
+        },
+        "padding": {
+          "label": "Padding",
+          "unit": "px"
         }
       },
       "product_card": {
@@ -639,7 +640,6 @@
         }
       }
     },
-
     "slideshow": {
       "blocks": {
         "image": {
@@ -946,7 +946,6 @@
         }
       }
     },
-    
     "video": {
       "name": "Video",
       "presets": {
@@ -1498,12 +1497,57 @@
       }
     },
     "tab-collage": {
-      "name": "Tab collage",
+      "name": "Tab Collage",
+      "settings": {
+        "desktop": {
+          "size_tab_heading": {
+            "label": "Desktop tab heading size",
+          },
+          "size_tab_content": {
+            "label": "Desktop tab content size"
+          },
+          "layout": {
+            "label": "Desktop layout",
+            "options__1": {
+              "label": "Image first"
+            },
+            "options__2": {
+              "label": "Image second"
+            }
+          },
+        },
+        "mobile": {
+          "size_tab_heading": {
+            "label": "Mobile tab heading size",
+          },
+          "size_tab_content": {
+            "label": "Mobile tab content size"
+          },
+          "layout": {
+            "label": "Mobile layout",
+            "options__1": {
+              "label": "Image first"
+            },
+            "options__2": {
+              "label": "Image second"
+            }
+          },
+        },
+        "colors": {
+          "tab_heading": {
+            "label": "Tab heading color"
+          },
+          "tab_content": {
+            "label": "Tab content color"
+          },
+          "tab_border": {
+            "label": "Tab border color"
+          }
+        }
+      },
       "presets": {
-        "name": "Tab collage"
+        "name": "Tab Collage"
       }
     },
   }
-} 
-
-
+}

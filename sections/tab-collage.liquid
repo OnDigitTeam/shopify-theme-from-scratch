@@ -11,124 +11,57 @@
   }
 {%- endstyle -%}
 
+{% assign first_tab = 1 %}
+
 <section class="section--padding tab-collage-section">
   <div class="page-width page-width--full-width">
     <div class="tab-collage grid {% if section.settings.desktop-layout == "image_first" %} desktop-grid--reverse {% endif %} {% if section.settings.mobile-layout == "image_first" %} mobile-grid--reverse {% endif %} grid--gapless grid--1-col grid--2-col-tablet">
       <!-- Column 1: Accordion -->
       <div class="grid__item text__grid-item">
         <div class="accordion">
-
+          {% assign first_tab = 1 %}
           {%- for block in section.blocks -%}
-              {%- case block.type -%}
-              {%- when "tab" -%}
-
-           <div
-            class="accordion-item active"
-            data-img="{% if block.settings.image %} {{ block.settings.image }} {% endif %}"
-          >
-            <div class="accordion-tab">
-              {{ block.settings.tab_heading }}
-              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-            <div class="accordion-content">
-              <p>{{ block.settings.tab_content }}</p>
-            </div>
-          </div>
-              {%- endcase -%}
+            {%- if block.type == 'tab' -%}
+              <div class="accordion-item{% if first_tab == 1 %} active{% endif %}" data-index="{{ forloop.index0 }}">
+                <div class="accordion-tab">
+                  <span class="{{section.settings.desktop_tab_heading_size}} {{ section.settings.mobile_tab_heading_size }}">{{ block.settings.tab_heading }}</span>
+                  <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                  </svg>
+                </div>
+                <div class="accordion-content {{ section.settings.desktop_tab_content_size }} {{ section.settings.mobile_tab_content_size }}">
+                  {{ block.settings.tab_content }}
+                </div>
+              </div>
+              {% assign first_tab = 2 %}
+            {%- endif -%}
           {%- endfor -%}
-
-
-          {% comment %} <div
-            class="accordion-item active"
-            data-img="https://img.photographyblog.com/reviews/canon_eos_r50/photos/canon_eos_r50_02.jpg"
-          >
-            <div class="accordion-tab">
-              Tab 1
-              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
-                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
-                and maintain the natural softness of children’s skin.
-              </p>
-            </div>
-          </div> {% endcomment %}
-          {% comment %} <div
-            class="accordion-item"
-            data-img="https://www.shutterstock.com/image-photo/wakawa-bay-marlborough-sounds-south-600nw-2460651725.jpg"
-          >
-            <div class="accordion-tab">
-              Tab 2
-              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
-                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
-                and maintain the natural softness of children’s skin.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item" data-img="https://live.staticflickr.com/4365/37082384235_a643fba80d_b.jpg">
-            <div class="accordion-tab">
-              Tab 3
-              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
-                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
-                and maintain the natural softness of children’s skin.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="accordion-item"
-            data-img="https://www.ricoh-imaging.co.jp/japan/products/kf/ex/img/ex-pic01-thumb.jpg"
-          >
-            <div class="accordion-tab">
-              Tab 4
-              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-            <div class="accordion-content">
-              <p>
-                Healthy, functioning skin starts from birth. Formulated specifically for sensitive young skin, Dr.
-                Coke’s baby and kids collection uses non-irritating and fragrance-free ingredients that nourish, protect
-                and maintain the natural softness of children’s skin.
-              </p>
-            </div>
-          </div> {% endcomment %}
         </div>
       </div>
 
       <!-- Column 2: Image -->
-      <div class="grid__item " style="padding:0;">
+      <div class="grid__item" style="padding:0;">
         <div class="image-animate media media--{{ section.settings.image_ratio }} media-mobile--{{ section.settings.mobile_image_ratio }}">
-          <img
-            srcset="{{ block.settings.image | image_url: height: image_height }} 1x, {{ block.settings.image | image_url: height: image_height_2x }} 2x"
-            src="{{ block.settings.image | image_url: height: image_height }}"
-            alt="{{ block.settings.image.alt | escape }}"
-            loading="lazy"
-            width="{{ image_height | times: block.settings.image.aspect_ratio }}"
-            height="{{ image_height }}"
-            class="promotion__image image-fit"
-            is="lazy-image"
-            id="accordion-image"
-            alt="Accordion Image"
-            style="width: 100%;"
-          >
+          <div class="accordion-image">
+            {% assign first_tab = 1 %}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'tab' -%}
+                {% if block.settings.tab_image %}
+                  <img
+                    src="{{ block.settings.tab_image | image_url }}"
+                    alt="{{ block.settings.tab_image.alt | escape }}"
+                    class="tab-image{% if first_tab == 1 %} active{% endif %}"
+                  >
+                {% else %}
+                  {{
+                    'hero-apparel-3'
+                    | placeholder_svg_tag: 'placeholder-svg placeholder collage-card__image tab-image'
+                  }}
+                {% endif %}
+                {% assign first_tab = 2 %}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
         </div>
       </div>
     </div>
@@ -153,6 +86,51 @@
 
       }
 
+      @media screen and (min-width:768px){
+              .desktop-tabhsize{
+        font-size:18px;
+      }
+      .desktop-tabhsize2{
+        font-size:20px;
+      }
+      .desktop-tabhsize3{
+        font-size:22px;
+      }
+
+      .desktop-tabcsize{
+        font-size:16px;
+      }
+      .desktop-tabcsize2{
+        font-size:18px;
+      }
+      .desktop-tabcsize3{
+        font-size:20px;
+      }
+    }
+      @media screen and (max-width:768px){
+
+           .mobile-tabhsize{
+            font-size:16px;
+          }
+          .mobile-tabhsize2{
+            font-size:18px;
+          }
+          .mobile-tabhsize3{
+            font-size:20px;
+          }
+
+      .mobile-tabcsize{
+        font-size:14px;
+      }
+      .mobile-tabcsize2{
+        font-size:16px;
+      }
+      .mobile-tabcsize3{
+        font-size:18px;
+      }
+
+      }
+
       .tab-collage .text__grid-item{
         background-color:var(--section-colors_background);
     }
@@ -165,7 +143,6 @@
       .tab-collage .accordion-tab {
         width: 100%;
         color: var(--section-tab-colors-heading);
-        {% comment %} background: #f3f3f3; {% endcomment %}
         padding: 12px 16px;
         text-align: left;
         font-size: 16px;
@@ -188,7 +165,6 @@
         display: none;
         padding: 10px 15px;
         color:var(--section-tab-colors-text);
-        {% comment %} background: #fafafa; {% endcomment %}
         border-radius: 0 0 6px 6px;
       }
       .tab-collage .accordion-item.active .accordion-content {
@@ -197,44 +173,52 @@
       .tab-collage .accordion-item{
     border-bottom:2px solid var(--section-tab-colors-border);
     }
-    @media screen and (max-width:768px){
-     {% comment %} .tab-collage .grid__item{
-      width:100%;
-      } {% endcomment %}
+
+    .accordion-image {
+    position: relative;
+  }
+  .tab-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .tab-image.active {
+    opacity: 1;
+    position: relative;
   }
 </style>
-
 <script>
-  const items = document.querySelectorAll('.accordion-item');
-  const imgEl = document.getElementById('accordion-image');
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    const tabImages = document.querySelectorAll('.tab-image');
 
-  let lastOpenedImg = '';
+    let lastActiveImageIndex = 0;
 
-  items.forEach((item) => {
-    const tab = item.querySelector('.accordion-tab');
-    tab.addEventListener('click', () => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
+    accordionItems.forEach((item, index) => {
+      const tab = item.querySelector('.accordion-tab');
 
-        const anyOpen = [...items].some((i) => i.classList.contains('active'));
+      tab.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
 
-        if (!anyOpen) {
-          imgEl.src = lastOpenedImg;
+        accordionItems.forEach((i) => i.classList.remove('active'));
+        tabImages.forEach((img) => img.classList.remove('active'));
+
+        if (!isActive) {
+          item.classList.add('active');
+          tabImages[index].classList.add('active');
+          lastActiveImageIndex = index;
+        } else {
+          tabImages[lastActiveImageIndex].classList.add('active');
         }
-      } else {
-        items.forEach((i) => i.classList.remove('active'));
-        item.classList.add('active');
-
-        lastOpenedImg = item.getAttribute('data-img');
-        imgEl.src = lastOpenedImg;
-      }
+      });
     });
-  });
 
-  window.addEventListener('DOMContentLoaded', () => {
-    items[0].classList.add('active');
-    lastOpenedImg = items[0].getAttribute('data-img');
-    imgEl.src = lastOpenedImg;
+    // Ensure first image is visible initially
+    tabImages[0].classList.add('active');
+    lastActiveImageIndex = 0;
   });
 </script>
 
@@ -243,28 +227,24 @@
   "name": "t:sections.tab-collage.name",
   "settings": [
     {
-      "type": "header",
-      "content": "Desktop Settings"
-    },
-    {
       "type": "select",
       "id": "desktop_tab_heading_size",
       "options": [
         {
-          "value": "typeset",
+          "value": "desktop-tabhsize",
           "label": "t:sections.all.text_size.options__1.label"
         },
         {
-          "value": "typeset2",
+          "value": "desktop-tabhsize2",
           "label": "t:sections.all.text_size.options__2.label"
         },
         {
-          "value": "typeset3",
+          "value": "desktop-tabhsize3",
           "label": "t:sections.all.text_size.options__3.label"
         }
       ],
-      "default": "typeset2",
-      "label": "Tab Heading"
+      "default": "desktop-tabhsize2",
+      "label": "t:sections.tab-collage.settings.desktop.size_tab_heading.label"
     },
 
     {
@@ -272,20 +252,20 @@
       "id": "desktop_tab_content_size",
       "options": [
         {
-          "value": "typeset",
+          "value": "desktop-tabcsize",
           "label": "t:sections.all.text_size.options__1.label"
         },
         {
-          "value": "typeset2",
+          "value": "desktop-tabcsize2",
           "label": "t:sections.all.text_size.options__2.label"
         },
         {
-          "value": "typeset3",
+          "value": "desktop-tabcsize3",
           "label": "t:sections.all.text_size.options__3.label"
         }
       ],
-      "default": "typeset2",
-      "label": "Tab content"
+      "default": "desktop-tabcsize2",
+      "label": "t:sections.tab-collage.settings.desktop.size_tab_content.label"
     },
 
     {
@@ -293,16 +273,16 @@
       "id": "desktop-layout",
       "options": [
         {
-          "value": "text_first",
-          "label": "Text First"
+          "value": "image_first",
+          "label": "t:sections.tab-collage.settings.desktop.layout.options__1.label"
         },
         {
-          "value": "image_first",
-          "label": "Image First"
+          "value": "image_second",
+          "label": "t:sections.tab-collage.settings.desktop.layout.options__2.label"
         }
       ],
-      "default": "text_first",
-      "label": "Desktop layout"
+      "default": "image_second",
+      "label": "t:sections.tab-collage.settings.desktop.layout.label"
     },
     {
       "type": "select",
@@ -349,7 +329,7 @@
           "value": "100vh"
         }
       ],
-      "default": "650px",
+      "default": "550px",
       "label": "t:sections.all.image_ratio.label"
     },
     {
@@ -358,33 +338,33 @@
       "min": 0,
       "max": 100,
       "step": 4,
-      "unit": "t:sections.all.padding.padding_top.unit",
-      "label": "Padding",
+      "unit": "t:sections.all.padding.padding.unit",
+      "label": "t:sections.all.padding.padding.label",
       "default": 40
     },
     {
       "type": "header",
-      "content": "Mobile Settings"
+      "content": "t:sections.all.mobile_layout.header.content"
     },
     {
       "type": "select",
       "id": "mobile_tab_heading_size",
       "options": [
         {
-          "value": "typeset",
+          "value": "mobile-tabhsize",
           "label": "t:sections.all.text_size.options__1.label"
         },
         {
-          "value": "typeset2",
+          "value": "mobile-tabhsize2",
           "label": "t:sections.all.text_size.options__2.label"
         },
         {
-          "value": "typeset3",
+          "value": "mobile-tabhsize3",
           "label": "t:sections.all.text_size.options__3.label"
         }
       ],
-      "default": "typeset2",
-      "label": "Tab Heading"
+      "default": "mobile-tabhsize2",
+      "label": "t:sections.tab-collage.settings.mobile.size_tab_heading.label"
     },
 
     {
@@ -392,20 +372,20 @@
       "id": "mobile_tab_content_size",
       "options": [
         {
-          "value": "typeset",
+          "value": "mobile-tabcsize",
           "label": "t:sections.all.text_size.options__1.label"
         },
         {
-          "value": "typeset2",
+          "value": "mobile-tabcsize2",
           "label": "t:sections.all.text_size.options__2.label"
         },
         {
-          "value": "typeset3",
+          "value": "mobile-tabcsize3",
           "label": "t:sections.all.text_size.options__3.label"
         }
       ],
-      "default": "typeset2",
-      "label": "Tab Content"
+      "default": "mobile-tabcsize2",
+      "label": "t:sections.tab-collage.settings.mobile.size_tab_content.label"
     },
 
     {
@@ -457,24 +437,24 @@
       "id": "mobile-layout",
       "options": [
         {
-          "value": "text_first",
-          "label": "Text First"
+          "value": "image_first",
+          "label": "t:sections.tab-collage.settings.mobile.layout.options__1.label"
         },
         {
-          "value": "image_first",
-          "label": "Image First"
+          "value": "image_second",
+          "label": "t:sections.tab-collage.settings.mobile.layout.options__2.label"
         }
       ],
-      "default": "text_first",
-      "label": "Mobile layout"
+      "default": "image_first",
+      "label": "t:sections.tab-collage.settings.mobile.layout.label"
     },
     {
       "type": "range",
       "id": "innner_mobile_padding",
       "min": 0,
       "max": 80,
-      "unit": "t:sections.all.padding.padding_top.unit",
-      "label": "Padding",
+      "unit": "t:sections.all.padding.padding.unit",
+      "label": "t:sections.all.padding.padding.label",
       "default": 20
     },
     {
@@ -490,19 +470,19 @@
     {
       "type": "color",
       "id": "tab_colors_heading",
-      "label": "Tab heading color",
+      "label": "t:sections.tab-collage.settings.colors.tab_heading.label",
       "default": "#212326"
     },
     {
       "type": "color",
       "id": "tab_colors_text",
-      "label": "Tab text color",
+      "label": "t:sections.tab-collage.settings.colors.tab_content.label",
       "default": "#212326"
     },
     {
       "type": "color",
       "id": "tab_colors_border",
-      "label": "Tab border color",
+      "label": "t:sections.tab-collage.settings.colors.tab_border.label",
       "default": "#212326"
     },
     {
