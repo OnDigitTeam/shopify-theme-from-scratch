@@ -1,0 +1,144 @@
+.fs-10 {
+    font-size: 10px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-26 {
+    font-size: 26px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+@media screen and (min-width: 768px) {
+    .desktop-fs-12 {
+        font-size: 12px;
+    }
+
+    .desktop-fs-14 {
+        font-size: 14px;
+    }
+
+    .desktop-fs-16 {
+        font-size: 16px;
+    }
+
+    .desktop-fs-18 {
+        font-size: 18px;
+    }
+
+    .desktop-fs-20 {
+        font-size: 20px;
+    }
+
+    .desktop-fs-22 {
+        font-size: 22px;
+    }
+
+    .desktop-fs-24 {
+        font-size: 24px;
+    }
+
+    .desktop-fs-26 {
+        font-size: 26px;
+    }
+
+    .desktop-fs-28 {
+        font-size: 28px;
+    }
+
+    .desktop-fs-30 {
+        font-size: 30px;
+    }
+
+    .desktop-fs-32 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .mobile-fs-10 {
+        font-size: 10px;
+    }
+
+    .mobile-fs-12 {
+        font-size: 12px;
+    }
+
+    .mobile-fs-14 {
+        font-size: 14px;
+    }
+
+    .mobile-fs-16 {
+        font-size: 16px;
+    }
+
+    .mobile-fs-18 {
+        font-size: 18px;
+    }
+
+    .mobile-fs-20 {
+        font-size: 20px;
+    }
+
+    .mobile-fs-22 {
+        font-size: 22px;
+    }
+
+    .mobile-fs-24 {
+        font-size: 24px;
+    }
+
+    .mobile-fs-26 {
+        font-size: 26px;
+    }
+
+    .mobile-fs-28 {
+        font-size: 28px;
+    }
+
+    .mobile-fs-30 {
+        font-size: 30px;
+    }
+
+    .mobile-fs-32 {
+        font-size: 32px;
+    }
+}

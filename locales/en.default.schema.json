@@ -1559,108 +1559,141 @@
         "name": "Tab Collage"
       }
     },
-    "image-text-with-overlay":{
-      "name":"Image text with overlay",
-      "settings":{
-          "layout":{
-            "label":"Text layout",
-            "left":"Left",
-            "middle":"Middle",
-            "right":"Right"
-          },
-          "overlay_width":{
-            "label":"Text container width"
-          },
-          "background_overlay_opacity":{
-            "label":"Color background overlay opacity"
-          },
-          "use_custom_colors_for_mobile":{
-            "label":"Use different mobile colors"
-          },
-          "mobile":{
-            "colors":{
-              "mobile_colors_button_label":"Mobile Solid button label",
-              "mobile_colors_button_background":"Mobile Solid button background",
-              "mobile_colors_text":"Mobile Text Color"
-            }
+    "image-text-with-overlay": {
+      "name": "Image text with overlay",
+      "settings": {
+        "layout": {
+          "label": "Text layout",
+          "left": "Left",
+          "middle": "Middle",
+          "right": "Right"
+        },
+        "overlay_width": {
+          "label": "Text container width"
+        },
+        "background_overlay_opacity": {
+          "label": "Color background overlay opacity"
+        },
+        "use_custom_colors_for_mobile": {
+          "label": "Use different mobile colors"
+        },
+        "mobile": {
+          "colors": {
+            "mobile_colors_button_label": "Mobile Solid button label",
+            "mobile_colors_button_background": "Mobile Solid button background",
+            "mobile_colors_text": "Mobile Text Color"
           }
+        }
+      }
+    },
+    "image-fixed-with-scrolling-cards": {
+      "name": "Image fixed with scrolling cards",
+      "settings": {
+        "layout": {
+          "desktop_label":"Desktop layout",
+          "mobile_label":"Mobile layout",
+          "option_1": "Image First",
+          "option_2": "Text First"
+        },
+        "heading_size":{
+          "label":"Desktop card heading size"
+        },
+        "content_size":{
+          "label":"Desktop card content size"
+        },
+        "mobile-heading_size":{
+          "label":"Mobile card heading size"
+        },
+        "colors":{
+          "colors_card_background":{
+            "label":"Card background color"
+          }
+        }
+      },
+      "blocks":{
+        "card_heading":{
+          "label":"Card heading"
+        },
+        "card_content":{
+          "label":"Card content"
+        }
       }
     }
   },
   "settings_schema": {
     "typography": {
-        "name": "Typography",
-        "settings": {
-          "body_scale": {
-            "label": "Font size scale",
-            "unit": "%"
+      "name": "Typography",
+      "settings": {
+        "body_scale": {
+          "label": "Font size scale",
+          "unit": "%"
+        },
+        "header__1": {
+          "content": "Headings"
+        },
+        "header__2": {
+          "content": "Body"
+        },
+        "header__3": {
+          "content": "Extras"
+        },
+        "heading_capitalize": {
+          "label": "Capitalize"
+        },
+        "heading_center": {
+          "label": "Center headings"
+        },
+        "heading_scale": {
+          "label": "Font size scale",
+          "unit": "%"
+        },
+        "price_superscript": {
+          "label": "Superscript price decimal"
+        },
+        "type_body_font": {
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)",
+          "label": "Font"
+        },
+        "type_button_font": {
+          "label": "Buttons font",
+          "options__1": {
+            "label": "Body"
           },
-          "header__1": {
-            "content": "Headings"
+          "options__2": {
+            "label": "Headings"
+          }
+        },
+        "type_button_size": {
+          "label": "Buttons size",
+          "unit": "px"
+        },
+        "type_header_font": {
+          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)",
+          "label": "Font"
+        },
+        "type_navigation_font": {
+          "label": "Navigation font",
+          "options__1": {
+            "label": "Body"
           },
-          "header__2": {
-            "content": "Body"
+          "options__2": {
+            "label": "Headings"
+          }
+        },
+        "type_navigation_size": {
+          "label": "Navigation size",
+          "unit": "px"
+        },
+        "type_price_font": {
+          "label": "Prices font",
+          "options__1": {
+            "label": "Body"
           },
-          "header__3": {
-            "content": "Extras"
-          },
-          "heading_capitalize": {
-            "label": "Capitalize"
-          },
-          "heading_center": {
-            "label": "Center headings"
-          },
-          "heading_scale": {
-            "label": "Font size scale",
-            "unit": "%"
-          },
-          "price_superscript": {
-            "label": "Superscript price decimal"
-          },
-          "type_body_font": {
-            "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)",
-            "label": "Font"
-          },
-          "type_button_font": {
-            "label": "Buttons font",
-            "options__1": {
-              "label": "Body"
-            },
-            "options__2": {
-              "label": "Headings"
-            }
-          },
-          "type_button_size": {
-            "label": "Buttons size",
-            "unit": "px"
-          },
-          "type_header_font": {
-            "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)",
-            "label": "Font"
-          },
-          "type_navigation_font": {
-            "label": "Navigation font",
-            "options__1": {
-              "label": "Body"
-            },
-            "options__2": {
-              "label": "Headings"
-            }
-          },
-          "type_navigation_size": {
-            "label": "Navigation size",
-            "unit": "px"
-          },
-          "type_price_font": {
-            "label": "Prices font",
-            "options__1": {
-              "label": "Body"
-            },
-            "options__2": {
-              "label": "Headings"
-            }
+          "options__2": {
+            "label": "Headings"
           }
         }
       }
-   }    
+    }
+  }
 }
