@@ -397,7 +397,7 @@
 
 {% schema %}
 {
-  "name": "Testimonial",
+  "name": "Testimonials",
   "settings": [
     {
       "type": "select",
@@ -592,6 +592,25 @@
         }
       ]
     }
-  ]
+  ],
+    "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+         {
+          "type": "testimonial"
+        },
+         {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  }
 }
 {% endschema %}
