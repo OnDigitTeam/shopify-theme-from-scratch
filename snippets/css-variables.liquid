@@ -25,6 +25,25 @@
     --font-heading-style: {{ settings.type_header_font.style }};
     --font-heading-weight: {{ settings.type_header_font.weight }};
 
+    --background:{{ settings.background_color.red }}, {{ settings.background_color.green }}, {{ settings.background_color.blue }};
 
+    --container-gutter: 1.25rem;
+
+  }
+
+  @media screen and (min-width: 700px) {
+    :root {
+      
+      /* Spacing settings */
+      --container-gutter: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    :root {
+      /* Spacing settings */
+      --container-gutter: 3rem;
+
+    }
   }
 {% endstyle %}

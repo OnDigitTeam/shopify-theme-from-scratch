@@ -142,6 +142,10 @@
   endif
 %}
 
+<script>
+  document.documentElement.style.setProperty('--header-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+</script>
+
 <{{ header_tag }}
   {% if header_tag == 'sticky-header' %}
     data-sticky-type="{{ section.settings.sticky_header_type }}"
@@ -662,7 +666,82 @@
   ],
   "blocks": [
     {
-      "type": "@app"
+      "type": "mega_menu",
+      "name": "Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Menu item",
+          "info": "Enter menu item to apply a mega menu dropdown. "
+        },
+        {
+          "type": "select",
+          "id": "images_position",
+          "label": "Images position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "right"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1",
+          "info": "650 x 400px .jpg recommended"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "image_1_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "image_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "image_1_link",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2",
+          "info": "650 x 400px .jpg recommended"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "image_2_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "image_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "image_2_link",
+          "label": "Link"
+        }
+      ]
     }
   ]
 }

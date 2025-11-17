@@ -5,90 +5,93 @@
   {% render 'header-mega-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
-      <li>
-        {%- if link.links != blank -%}
-          <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
-              <summary
-                id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset"
-              >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
-                >
-                  {{- link.title | escape -}}
-                </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div
-                id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
-                tabindex="-1"
-              >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
+ {%- assign menu = section.settings.menu -%}
+    {%- assign sidebar_menu = section.settings.sidebar_menu -%}
+
+    {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
+      <nav class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}" aria-label="{{ 'header.general.primary_navigation' | t | escape }}">
+        <button type="button" aria-controls="sidebar-menu" {% unless section.settings.layout == 'drawer' %}class="md:hidden"{% endunless %}>
+          <span class="sr-only">Menu</span>
+         
+        </button>
+
+        {%- if menu.links.size > 0 and section.settings.layout != 'drawer' -%}
+          <ul class="contents unstyled-list md-max:hidden">
+            {%- for link in menu.links -%}
+              {% liquid
+                assign link_title_downcase = link.title | strip | downcase
+                assign mega_menu_block = ''
+
+                for block in section.blocks
+                  assign menu_item_downcase = block.settings.menu_item | strip | downcase
+
+                  if menu_item_downcase == link_title_downcase
+                    assign mega_menu_block = block
+                    break
+                  endif
+
+                endfor
+              %}
+
+              <li class="header__primary-nav-item" data-title="{{ link.title | escape }}">
+                {%- if link.levels == 0 and mega_menu_block == '' -%}
+                  <a href="{{ link.url }}" class="block h6 title_{{ link.title | downcase | replace: " ", "_" }} {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
+                {%- else -%}
+                  {%- capture disclosure_content -%}
+                    <details class="header__menu-disclosure">
+                      <summary data-follow-link="{{ link.url }}" {% if section.settings.menu_text_font == 'heading' %}class="h6"{% endif %}>
+                        {{- link.title -}}
+                      </summary>
+
+                      {%- if mega_menu_block != '' -%}
+                        {%- render 'mega-menu', link: link, block: mega_menu_block -%}
+                      {%- else -%}
+                        <ul class="header__dropdown-menu {% if link.levels <= 1 %}header__dropdown-menu--restrictable{% endif %} unstyled-list" role="list">
+                          {%- for sub_link in link.links -%}
                             <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
+                              {%- if sub_link.levels == 0 -%}
+                                <a href="{{ sub_link.url }}" class="link-faded-reverse" {% if sub_link.current %}aria-current="page"{% endif %}>{{ sub_link.title }}</a>
+                              {%- else -%}
+                                <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
+                                  <details class="header__menu-disclosure">
+                                    <summary data-follow-link="{{ sub_link.url }}" class="link-faded-reverse">
+                                      <div class="h-stack gap-4 justify-between">
+                                        {{- sub_link.title -}}
+                                        {%- render 'icon' with 'arrow-right', width: 8, direction_aware: true -%}
+                                      </div>
+                                    </summary>
+
+                                    <ul class="header__dropdown-menu unstyled-list" role="list">
+                                      {%- for sub_sub_link in sub_link.links -%}
+                                        <li>
+                                          <a href="{{ sub_sub_link.url }}" class="link-faded-reverse" {% if sub_sub_link.current %}aria-current="page"{% endif %}>{{ sub_sub_link.title }}</a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  </details>
+                                </dropdown-menu-disclosure>
+                              {%- endif -%}
                             </li>
                           {%- endfor -%}
                         </ul>
                       {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              </div>
-            </details>
-          </header-menu>
-        {%- else -%}
-          <a
-            id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            <span
-              {%- if link.current %}
-                class="header__active-menu-item"
-              {% endif %}
-            >
-              {{- link.title | escape -}}
-            </span>
-          </a>
+                    </details>
+                  {%- endcapture -%}
+
+                  {% if mega_menu_block != '' %}
+                    <mega-menu-disclosure follow-summary-link trigger="hover" class="contents">
+                      {{- disclosure_content -}}
+                    </mega-menu-disclosure>
+                  {%- else -%}
+                    <dropdown-menu-disclosure follow-summary-link trigger="hover">
+                      {{- disclosure_content -}}
+                    </dropdown-menu-disclosure>
+                  {%- endif -%}
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
         {%- endif -%}
-      </li>
-    {%- endfor -%}
-  </ul>
-</nav>
+      </nav>
+    {%- endif -%}
+
