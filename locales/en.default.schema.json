@@ -946,6 +946,84 @@
         }
       }
     },
+    "announcement-bar": {
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "link": {
+              "label": "Link"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "text_on_mobile": {
+              "label": "Text on mobile"
+            },
+            "text_size": {
+              "label": "Text size",
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "name": "Announcement bar",
+      "settings": {
+        "autorotate": {
+          "label": "Auto-rotate announcements"
+        },
+        "autorotate_speed": {
+          "label": "Change announcements every",
+          "unit": "s"
+        },
+        "direction": {
+          "label": "Direction",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Right"
+          }
+        },
+        "header__1": {
+          "content": "Carousel style"
+        },
+        "header__2": {
+          "content": "Marquee style"
+        },
+        "layout": {
+          "label": "Desktop layout",
+          "options__1": {
+            "label": "Marquee"
+          },
+          "options__2": {
+            "label": "Carousel"
+          },
+          "options__3": {
+            "label": "Default"
+          }
+        },
+        "mobile_layout": {
+          "label": "Mobile layout"
+        },
+        "only_homepage": {
+          "label": "Show on home page only"
+        },
+        "paragraph__1": {
+          "content": "Requires carousel style to be enabled."
+        },
+        "paragraph__2": {
+          "content": "Requires marquee style to be enabled."
+        },
+        "show_navigation": {
+          "label": "Show navigation"
+        },
+        "speed": {
+          "label": "Speed",
+          "unit": "s/100px"
+        }
+      }
+    },
     "video": {
       "name": "Video",
       "presets": {

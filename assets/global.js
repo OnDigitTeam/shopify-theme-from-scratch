@@ -44,4 +44,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  
+  /*
+@license
+  Be Yours by roartheme (https://roartheme.co)
+  Access unminified JS in assets/global.js
+
+  Use this event listener to run your own JS outside of this file.
+  Documentation - https://roartheme.co/blogs/beyours/javascript-events-for-developers
+
+  document.addEventListener('page:loaded', function() {
+    // Page has loaded and theme assets are ready
+  });
+*/
+window.theme = window.theme || {};
+
+theme.config = {
+  mqlSmall: false,
+  mediaQuerySmall: 'screen and (max-width: 749px)',
+  isTouch: ('ontouchstart' in window) || window.DocumentTouch && window.document instanceof DocumentTouch || window.navigator.maxTouchPoints || window.navigator.msMaxTouchPoints ? true : false,
+  rtl: document.documentElement.getAttribute('dir') === 'rtl' ? true : false
+};
+
+
+
+
+
+
+
+
+
+
