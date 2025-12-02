@@ -91,24 +91,7 @@
                 {% endif %}
               {% else %}
                 {%- if forloop.first %}
-                  {% if block.settings.mobile_image == blank %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 3840
-                      | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: 'fade-in'
-                    }}
-                  {% else %}
-                    {{
-                      block.settings.image
-                      | image_url: width: 3840
-                      | image_tag: class: 'd-none d-lg-block fade-in', height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
-                    }}
-                    {{
-                      block.settings.mobile_image
-                      | image_url: width: 750
-                      | image_tag: class: 'd-lg-none fade-in', height: mobile_height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
-                    }}
-                  {% endif %}
+                 
                 {%- else -%}
                   {% if block.settings.mobile_image == blank %}
                     {{
