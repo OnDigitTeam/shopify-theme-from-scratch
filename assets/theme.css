@@ -3271,7 +3271,7 @@ slideshow {
 .slideshow-pagination-item__heading {
   padding: 0px;
   margin: 0px;
-  color: var(--text-green);
+  color: var(--text-white);
   transition: color 0.3s ease-in;
   -webkit-transition: color 0.3s ease-in;
   -moz-transition: color 0.3s ease-in;
