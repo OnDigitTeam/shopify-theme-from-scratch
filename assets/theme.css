@@ -3404,5 +3404,5 @@ slideshow {
   width: 100%;
 }
 .slider--invert-design .slideshow-pagination-item__tag, .slider--invert-design .slideshow-pagination-item__heading, .slider--invert-design .slideshow-pagination-item__button a {
-  color: var(--color-background);
+  color: var(--text-white);
 }
