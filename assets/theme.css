@@ -3390,6 +3390,9 @@ slideshow {
   transition: transform .3s ease-in;
   -webkit-transition: transform .3s ease-in;
   -moz-transition: transform .3s ease-in;
+  width: 13px;
+  height: 8px;
+  fill: none;
 }
 .container--type-2 {
   padding: 0 80px;
