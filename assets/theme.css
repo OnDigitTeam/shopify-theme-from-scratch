@@ -3397,3 +3397,6 @@ slideshow {
 .container--type-2 {
   padding: 0 80px;
 }
+.slideshow-pagination__item + .slideshow-pagination__item {
+  margin-left: auto;
+}
