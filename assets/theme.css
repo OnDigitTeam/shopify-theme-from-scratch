@@ -3405,7 +3405,9 @@ slideshow {
 }
 .slider--invert-design .slideshow-pagination-item__tag, .slider--invert-design .slideshow-pagination-item__heading, .slider--invert-design .slideshow-pagination-item__button a {
   color: var(--text-white);
+  text-decoration: none;  
 }
+
 .slideshow-pagination-item__tag.text-cta {
   font-size: 12px;
   letter-spacing: 2.6px;
