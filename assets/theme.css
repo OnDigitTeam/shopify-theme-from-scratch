@@ -3301,6 +3301,7 @@ slideshow {
 .slideshow-pagination-item__button a {
   font-size: var(--body-small-font-size-desktop);
   color: var(--text-white);
+  font-size: 13px;
 }
 
 @media (max-width: 991px) {
