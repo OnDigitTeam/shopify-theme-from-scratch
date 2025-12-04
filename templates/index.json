@@ -9,6 +9,75 @@
  */
 {
   "sections": {
+    "slideshow_hqqqwK": {
+      "type": "slideshow",
+      "blocks": {
+        "item_AcccjY": {
+          "type": "item",
+          "settings": {
+            "desktop_invert_design_color": true,
+            "desktop_media_type": "image",
+            "image": "shopify://shop_images/Rectangle_1_2.jpg",
+            "video_url": "",
+            "mobile_invert_design_color": true,
+            "mobile_media_type": "image",
+            "mobile_video_url": "",
+            "tag": "Collection",
+            "heading": "Water Meadow",
+            "button_label": "Shop now",
+            "button_url": "shopify://collections/all",
+            "enable_dark_overlay": false,
+            "dark_overlay_opacity": 10,
+            "dark_overlay_background_color": ""
+          }
+        },
+        "item_YNK7y8": {
+          "type": "item",
+          "settings": {
+            "desktop_invert_design_color": true,
+            "desktop_media_type": "image",
+            "image": "shopify://shop_images/wrist-watch-on-driving-arm.jpg",
+            "video_url": "",
+            "mobile_invert_design_color": true,
+            "mobile_media_type": "image",
+            "mobile_video_url": "",
+            "tag": "Interiors",
+            "heading": "Festive Tablescapes",
+            "button_label": "Shop now",
+            "button_url": "shopify://collections/all",
+            "enable_dark_overlay": false,
+            "dark_overlay_opacity": 10,
+            "dark_overlay_background_color": ""
+          }
+        },
+        "item_tEm7jc": {
+          "type": "item",
+          "settings": {
+            "desktop_invert_design_color": true,
+            "desktop_media_type": "image",
+            "image": "shopify://shop_images/fashion-toronto-watch.jpg",
+            "video_url": "",
+            "mobile_invert_design_color": true,
+            "mobile_media_type": "image",
+            "mobile_video_url": "",
+            "tag": "Seasonal",
+            "heading": "Autumn Leaves",
+            "button_label": "Shop now",
+            "button_url": "shopify://collections/all",
+            "enable_dark_overlay": false,
+            "dark_overlay_opacity": 10,
+            "dark_overlay_background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_AcccjY",
+        "item_YNK7y8",
+        "item_tEm7jc"
+      ],
+      "name": "Slideshow",
+      "settings": {}
+    },
     "main": {
       "type": "hello-world",
       "settings": {}
@@ -123,6 +192,7 @@
     }
   },
   "order": [
+    "slideshow_hqqqwK",
     "main",
     "custom_section_fRBMkX",
     "collections_3MW99p"
