@@ -3300,7 +3300,7 @@ slideshow {
 
 .slideshow-pagination-item__button a {
   font-size: var(--body-small-font-size-desktop);
-  color: var(--text-green);
+  color: var(--text-white);
 }
 
 @media (max-width: 991px) {
