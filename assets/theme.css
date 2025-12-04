@@ -3400,3 +3400,6 @@ slideshow {
 .slideshow-pagination__item + .slideshow-pagination__item {
   margin-left: auto;
 }
+.slideshow-pagination__d-flex {
+  width: 100%;
+}
