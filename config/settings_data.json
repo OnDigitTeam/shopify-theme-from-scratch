@@ -16,7 +16,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-    
     "cart": {
       "title": "Your cart",
       "caption": "Cart items",
@@ -72,7 +71,6 @@
     "video": {
       "load_video": "Load video: {{ description }}"
     },
-    
     "page": {
       "title": "Page title"
     },
@@ -101,5 +99,9 @@
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
     }
+  },
+  "current": {
+    "type_header_font": "instrument_sans_n4",
+    "content_for_index": []
   }
 }
