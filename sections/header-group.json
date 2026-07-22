@@ -36,7 +36,7 @@
         "mobile_logo_position": "left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "always",
+        "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "enable_country_selector": true,
         "enable_language_selector": true,
