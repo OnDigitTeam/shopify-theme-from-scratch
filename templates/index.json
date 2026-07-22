@@ -78,10 +78,6 @@
       "name": "Slideshow",
       "settings": {}
     },
-    "main": {
-      "type": "hello-world",
-      "settings": {}
-    },
     "custom_section_fRBMkX": {
       "type": "custom-section",
       "blocks": {
@@ -177,9 +173,78 @@
         "group_QHzLfz",
         "group_yj36nB"
       ],
+      "disabled": true,
       "name": "t:general.custom_section",
       "settings": {
         "background_image": "shopify://shop_images/wrist-watch-on-driving-arm.jpg"
+      }
+    },
+    "scrolling_promotion_NmnN8J": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "announcement_r9E9Cz": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "text": "Welcome to our store",
+            "text_size": 20,
+            "link": ""
+          }
+        },
+        "announcement_WdT7Xx": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "text": "Welcome to our store",
+            "text_size": 20,
+            "link": ""
+          }
+        },
+        "announcement_yJyGKW": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "text": "Welcome to our store",
+            "text_size": 20,
+            "link": ""
+          }
+        },
+        "announcement_cdBHpp": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "icon_size": "medium",
+            "custom_icon": "",
+            "text": "Welcome to our store",
+            "text_size": 20,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_r9E9Cz",
+        "announcement_WdT7Xx",
+        "announcement_yJyGKW",
+        "announcement_cdBHpp"
+      ],
+      "name": "t:sections.scrolling-promotion.presets.name",
+      "settings": {
+        "direction": "left",
+        "speed": 1.6,
+        "show_divider": false,
+        "use_custom_colors": false,
+        "colors_icon": "#ffffff",
+        "colors_text": "#1a1b18",
+        "colors_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collections_3MW99p": {
@@ -193,8 +258,8 @@
   },
   "order": [
     "slideshow_hqqqwK",
-    "main",
     "custom_section_fRBMkX",
+    "scrolling_promotion_NmnN8J",
     "collections_3MW99p"
   ]
 }
