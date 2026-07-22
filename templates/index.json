@@ -254,12 +254,56 @@
         "grid_item_width": "collections--full",
         "grid_gap": 10
       }
+    },
+    "tab_collage_xYRadq": {
+      "type": "tab-collage",
+      "blocks": {
+        "tab_KGGJ4Q": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Tab Heading",
+            "tab_content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "tab_image": "shopify://shop_images/mo_slide1.jpg"
+          }
+        },
+        "tab_rXgFdK": {
+          "type": "tab",
+          "settings": {
+            "tab_heading": "Tab Heading",
+            "tab_content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "tab_image": "shopify://shop_images/Rectangle_44.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_KGGJ4Q",
+        "tab_rXgFdK"
+      ],
+      "name": "t:sections.tab-collage.presets.name",
+      "settings": {
+        "desktop_tab_heading_size": "desktop-tabhsize2",
+        "desktop_tab_content_size": "desktop-tabcsize2",
+        "desktop-layout": "image_second",
+        "image_ratio": "550px",
+        "inner_padding": 40,
+        "mobile_tab_heading_size": "mobile-tabhsize2",
+        "mobile_tab_content_size": "mobile-tabcsize2",
+        "mobile_image_ratio": "auto",
+        "mobile-layout": "image_first",
+        "innner_mobile_padding": 20,
+        "use_custom_colors": false,
+        "tab_colors_heading": "#212326",
+        "tab_colors_text": "#212326",
+        "tab_colors_border": "#212326",
+        "colors_background": "#ffffff"
+      }
     }
   },
   "order": [
     "slideshow_hqqqwK",
     "custom_section_fRBMkX",
     "scrolling_promotion_NmnN8J",
-    "collections_3MW99p"
+    "collections_3MW99p",
+    "tab_collage_xYRadq"
   ]
 }
