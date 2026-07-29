@@ -349,6 +349,58 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collection_list_yrdRUN": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_YRT34N": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "collection-one",
+            "image": "shopify://shop_images/pro3.jpg",
+            "custom_title": ""
+          }
+        },
+        "featured_collection_KHRrBd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/pro2.jpg",
+            "custom_title": ""
+          }
+        },
+        "featured_collection_VNWKzH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/pro3.jpg",
+            "custom_title": ""
+          }
+        },
+        "featured_collection_nKMQg6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/pro3.jpg",
+            "custom_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_YRT34N",
+        "featured_collection_KHRrBd",
+        "featured_collection_VNWKzH",
+        "featured_collection_nKMQg6"
+      ],
+      "name": "Collection circle",
+      "settings": {
+        "use_custom_colors": false,
+        "colors_background": "#EEEAE9",
+        "colors_circle_bg": "#f5f5f5",
+        "colors_title": "#000000",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -357,6 +409,7 @@
     "scrolling_promotion_NmnN8J",
     "collections_3MW99p",
     "tab_collage_xYRadq",
-    "testimonials_RCECNB"
+    "testimonials_RCECNB",
+    "collection_list_yrdRUN"
   ]
 }
