@@ -8,52 +8,56 @@
  * ------------------------------------------------------------
  */
 {
+  "name": "t:sections.header.name",
   "type": "header",
-  "name": "t:general.header",
   "sections": {
-    "header": {
-      "type": "header",
+    "announcement": {
+      "type": "announcement",
       "blocks": {
-        "mega_menu_pjy3i4": {
-          "type": "mega_menu",
+        "announcement-bar-0": {
+          "type": "announcement",
           "settings": {
-            "menu_item": "",
-            "images_position": "right",
-            "image_1_heading": "",
-            "image_1_text": "",
-            "image_1_link": "",
-            "image_2_heading": "",
-            "image_2_text": "",
-            "image_2_link": ""
+            "text": "Fri fragt på alle ordrer over 399 DKK",
+            "link": ""
+          }
+        },
+        "announcement_Wz6CPz": {
+          "type": "announcement",
+          "settings": {
+            "text": "30 dages returret",
+            "link": ""
+          }
+        },
+        "announcement_Eq6BnJ": {
+          "type": "announcement",
+          "settings": {
+            "text": "Levering 1-3 dage",
+            "link": ""
+          }
+        },
+        "announcement_WTAAaB": {
+          "type": "announcement",
+          "settings": {
+            "text": "Professionel rådgivning",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "mega_menu_pjy3i4"
+        "announcement-bar-0",
+        "announcement_Wz6CPz",
+        "announcement_Eq6BnJ",
+        "announcement_WTAAaB"
       ],
-      "settings": {
-        "logo_position": "middle-left",
-        "mobile_logo_position": "left",
-        "menu": "footer",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "always",
-        "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
+      "settings": {}
     },
-    "side-cart": {
-      "type": "sidebar",
-      "disabled": true,
+    "header": {
+      "type": "header",
       "settings": {}
     }
   },
   "order": [
-    "header",
-    "side-cart"
+    "announcement",
+    "header"
   ]
 }
