@@ -117,7 +117,7 @@ announcement-bar {
 
 @media screen and (min-width: 990px) {
   announcement-bar:not([data-layout=carousel]) .announcement-slider {
-    column-gap: 7rem;
+    column-gap: 3rem;
   }
 
   announcement-bar:not([data-layout=carousel]).marquee .announcement-slider {
