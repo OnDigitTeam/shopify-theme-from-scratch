@@ -59,10 +59,10 @@
       ],
       "settings": {
         "only_homepage": true,
-        "layout": "marquee",
+        "layout": "default",
         "mobile_layout": "marquee",
         "direction": "left",
-        "speed": 1.6,
+        "speed": 1.4,
         "colors_text": "#ffffff",
         "colors_background": "#1a1b18",
         "gradient_background": "",
