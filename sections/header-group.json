@@ -62,7 +62,7 @@
         "layout": "marquee",
         "mobile_layout": "marquee",
         "direction": "left",
-        "speed": 1.4,
+        "speed": 1.3,
         "colors_text": "#FFFFFF",
         "colors_background": "#1a1b18",
         "gradient_background": "",
