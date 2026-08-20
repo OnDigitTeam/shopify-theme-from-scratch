@@ -18,6 +18,8 @@
           "type": "announcement",
           "settings": {
             "text": "Fri fragt på alle ordrer over 399 DKK",
+            "text_on_mobile": "",
+            "text_size": 13,
             "link": ""
           }
         },
@@ -25,6 +27,8 @@
           "type": "announcement",
           "settings": {
             "text": "30 dages returret",
+            "text_on_mobile": "",
+            "text_size": 13,
             "link": ""
           }
         },
@@ -32,6 +36,8 @@
           "type": "announcement",
           "settings": {
             "text": "Levering 1-3 dage",
+            "text_on_mobile": "",
+            "text_size": 13,
             "link": ""
           }
         },
@@ -39,6 +45,8 @@
           "type": "announcement",
           "settings": {
             "text": "Professionel rådgivning",
+            "text_on_mobile": "",
+            "text_size": 13,
             "link": ""
           }
         }
@@ -49,7 +57,18 @@
         "announcement_Eq6BnJ",
         "announcement_WTAAaB"
       ],
-      "settings": {}
+      "settings": {
+        "only_homepage": true,
+        "layout": "marquee",
+        "mobile_layout": "marquee",
+        "direction": "left",
+        "speed": 1.6,
+        "colors_text": "#ffffff",
+        "colors_background": "#1a1b18",
+        "gradient_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     },
     "header": {
       "type": "header",
